@@ -4,9 +4,9 @@ const NotFoundPage = () => {
   const error = useRouteError();
   return (
     <div>
-      <div className="  grid grid-cols-1 lg:flex lg:items-center lg:gap-3 justify-center">
-        <img className="w-60 text-center mx-auto" src={gif} alt="" />
-        <div className=" h-screen  flex gap-3 flex-col text-center  justify-center items-center">
+      <div className="  grid grid-cols-1    ">
+        <img className="w-56 text-center mx-auto" src={gif} alt="" />
+        <div className=" h-screen  flex gap-3 flex-col text-center -mt-9 justify-center items-center">
           <div className="w-96 space-y-4 bg-white p-5 rounded-lg">
             <h1 className="text-3xl text-black font-bold">Page Not Found</h1>
             <p className="text-red-500">

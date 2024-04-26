@@ -7,6 +7,7 @@ import MyArtsCarfts from "../pages/MyArtsCarfts";
 import NotFoundPage from "../pages/NotFoundPage";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import VeiwDetails from "../components/VeiwDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/allartscrafts",
         element: <AllArtsCarts />,
+        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/myartscrafts",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/details/:id",
+        element: <VeiwDetails></VeiwDetails>,
       },
     ],
   },
