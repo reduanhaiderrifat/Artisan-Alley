@@ -1,13 +1,24 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { FaGithub, FaTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const { singInuser } = useContext(AuthContext);
+  const {
+    singInuser,
+    loading,
+    user,
+    handleGoogle,
+    handleTwitter,
+    handleGithub,
+  } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const navigate = useNavigation();
   const {
     register,
     handleSubmit,
@@ -16,13 +27,43 @@ const Login = () => {
   const onSubmit = (data) => {
     const { email, password } = data;
 
+    setError("");
+    if (user) {
+      setError("User already login");
+      return;
+    }
     singInuser(email, password)
       .then((result) => {
         console.log(result.user);
+        if (!user) {
+          Swal.fire({
+            title: "Good job!",
+            text: "User login successfully!",
+            icon: "success",
+          });
+        }
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+  const handleGoogleLogin = () => {
+    handleGoogle().then(() => {
+      navigate("/");
+      toast.success("Successfully login with Google");
+    });
+  };
+  const handleTwiiterLogin = () => {
+    handleTwitter().then(() => {
+      navigate("/");
+      toast.success("Successfully login with Twitter");
+    });
+  };
+  const handleGIthubLogin = () => {
+    handleGithub().then(() => {
+      navigate("/");
+      toast.success("Successfully login with Github");
+    });
   };
   return (
     <div className="hero min-h-screen ">
@@ -55,6 +96,7 @@ const Login = () => {
               {errors.email && (
                 <span className=" text-red-500">This field is required</span>
               )}
+              <span className=" text-red-500"> {error}</span>
             </div>
             <div className="form-control">
               <span>Password</span>
@@ -85,20 +127,35 @@ const Login = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary">
+                {loading ? (
+                  <span className="loading loading-spinner loading-md"></span>
+                ) : (
+                  "Login"
+                )}{" "}
+              </button>
             </div>
             <div className="divider">or</div>
           </form>
           <div className="-mt-8">
             <p className=" text-center">Continue with </p>
             <div className="flex gap-5 justify-center pt-4">
-              <button className="hover:bg-slate-300 rounded-full p-3">
+              <button
+                onClick={handleGoogleLogin}
+                className="hover:bg-slate-300 rounded-full p-3"
+              >
                 <FcGoogle size={25} />
               </button>
-              <button className="hover:bg-slate-300 rounded-full p-3 text-sky-300">
+              <button
+                onClick={handleTwiiterLogin}
+                className="hover:bg-slate-300 rounded-full p-3 text-sky-300"
+              >
                 <FaTwitter size={25} />
               </button>
-              <button className="hover:bg-slate-300 rounded-full p-3">
+              <button
+                onClick={handleGIthubLogin}
+                className="hover:bg-slate-300 rounded-full p-3"
+              >
                 <FaGithub size={25} />
               </button>
             </div>

@@ -1,27 +1,106 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaGithub, FaPhotoFilm, FaTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const {
+    createUser,
+    updateUser,
+    loading,
+    setLoading,
+    handleGithub,
+    handleGoogle,
+    handleTwitter,
+  } = useContext(AuthContext);
+  const [passwordError, setpasswordError] = useState("");
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [accept, setAccept] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { username, photo, email, password } = data;
+    const { username, photo, email, password, confirmpassword, checkbox } =
+      data;
+
+    setError("");
+    setpasswordError("");
+    setAccept("");
+    if (password != confirmpassword) {
+      setpasswordError("Password did not match");
+      toast.error("Password did not match");
+      return;
+    }
+    if (password.length < 6) {
+      setpasswordError("password should be at least 6 characters or longer");
+      toast.error("password should be at least 6 characters or longer");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setpasswordError("Password should be at least one uppercase");
+      toast.error("Password should be at least one uppercase");
+      return;
+    }
+    if (!/(?=.*[a-z])/.test(password)) {
+      setpasswordError("Password should be at least one lowercase");
+      toast.error("Password should be at least one lowercase");
+      return;
+    }
+    if (!/(?=.*[@$!%*?&])/.test(password)) {
+      setpasswordError("Password should be at least one special character");
+      toast.error("Password should be at least one special character");
+      return;
+    }
+    if (!checkbox) {
+      setAccept("Please accept our terms & conditions");
+      toast.error("Please accept our terms & conditions");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
+        updateUser(username, photo).then(() => {});
         console.log(result.user);
+
+        Swal.fire({
+          title: "Good job!",
+          text: "User create successfully!",
+          icon: "success",
+        });
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false);
+        }, [1000]);
       });
+  };
+  const handleGoogleLogin = () => {
+    handleGoogle().then(() => {
+      navigate("/");
+      toast.success("Successfully login with Google");
+    });
+  };
+  const handleTwiiterLogin = () => {
+    handleTwitter().then(() => {
+      navigate("/");
+      toast.success("Successfully login with Twitter");
+    });
+  };
+  const handleGithubLogin = () => {
+    handleGithub().then(() => {
+      navigate("/");
+      toast.success("Successfully login with Github");
+    });
   };
   return (
     <div className="hero min-h-screen ">
@@ -91,6 +170,7 @@ const Register = () => {
               {errors.email && (
                 <span className=" text-red-500">This field is required</span>
               )}
+              <span className="text-red-500">{error.split(":")[1]}</span>
             </div>
             <div className="form-control">
               <span>Password</span>
@@ -118,6 +198,7 @@ const Register = () => {
               {errors.password && (
                 <span className=" text-red-500">This field is required</span>
               )}
+              <span className="text-red-500">{passwordError}</span>
             </div>
             <div className="form-control">
               <span>confirm-Password</span>
@@ -145,22 +226,53 @@ const Register = () => {
               {errors.confirmpassword && (
                 <span className=" text-red-500">This field is required</span>
               )}
+              <div className="flex justify-between mt-3">
+                {/* <div className=""> */}
+                <label className="mt-3 flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    className="checkbox checkbox-sm"
+                    {...register("checkbox")}
+                  />
+                  <Link to="/terms" className="label-text-alt link link-hover">
+                    Accept our Terms & conditions
+                  </Link>
+                </label>
+              </div>
+              <p className="text-red-500">{accept}</p>
+              {/* </div> */}
             </div>
+
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Register</button>
+              <button className="btn btn-primary">
+                {loading ? (
+                  <span className="loading loading-spinner loading-md"></span>
+                ) : (
+                  "Register"
+                )}
+              </button>
             </div>
             <div className="divider">or</div>
           </form>
           <div className="-mt-8">
             <p className=" text-center">Continue with </p>
             <div className="flex gap-5 justify-center pt-4">
-              <button className="hover:bg-slate-300 rounded-full p-3">
+              <button
+                onClick={handleGoogleLogin}
+                className="hover:bg-slate-300 rounded-full p-3"
+              >
                 <FcGoogle size={25} />
               </button>
-              <button className="hover:bg-slate-300 rounded-full p-3 text-sky-300">
+              <button
+                onClick={handleTwiiterLogin}
+                className="hover:bg-slate-300 rounded-full p-3 text-sky-300"
+              >
                 <FaTwitter size={25} />
               </button>
-              <button className="hover:bg-slate-300 rounded-full p-3">
+              <button
+                onClick={handleGithubLogin}
+                className="hover:bg-slate-300 rounded-full p-3"
+              >
                 <FaGithub size={25} />
               </button>
             </div>
