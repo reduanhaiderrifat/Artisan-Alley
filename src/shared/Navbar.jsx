@@ -136,7 +136,9 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button className="btn">Arts & Crafts</button>
+            <button className=" font-bold text-3xl text-[#ff9409]">
+              Arts & Crafts
+            </button>
           </div>
           <div className="hidden lg:flex">
             <ul className="flex items-center gap-6">{links}</ul>
