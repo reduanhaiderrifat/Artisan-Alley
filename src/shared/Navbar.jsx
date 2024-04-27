@@ -109,7 +109,7 @@ const Navbar = () => {
   return (
     <div>
       <div className="my-4">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center shadow-sm">
           <div className="flex items-center">
             <div className="">
               <button

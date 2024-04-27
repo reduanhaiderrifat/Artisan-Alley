@@ -1,22 +1,56 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AllArtsCarts = () => {
-  const products = useLoaderData();
-  console.log(products);
+  const [products, setProducts] = useState([]);
+  const { loading } = useContext(AuthContext);
+  const [load, setLoad] = useState(true);
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        console.log(data);
+        setLoad(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="h-[calc(100vh-80px)] flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+  if (load) {
+    return (
+      <div className="h-[calc(100vh-80px)] flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
   return (
     <div>
-      <h1>this is all arts cards</h1>
-
       <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
               <th></th>
-              <th>Category</th>
-              <th>Subcategory</th>
-              <th>Customization</th>
-              <th>Details</th>
+              <th>
+                <strong>Category</strong>
+              </th>
+              <th>
+                <strong>Subcategory</strong>
+              </th>
+              <th>
+                <strong>Customization</strong>
+              </th>
+              <th>
+                <strong>Details</strong>
+              </th>
             </tr>
           </thead>
           <tbody>

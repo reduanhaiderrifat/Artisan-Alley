@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { FaMoneyCheckDollar, FaStar } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const VeiwDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const { loading } = useContext(AuthContext);
   const {
     category,
     username,
@@ -31,9 +33,16 @@ const VeiwDetails = () => {
       });
   }, [id]);
 
+  if (loading) {
+    return (
+      <div className="h-[calc(100vh-80px)] flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col max-w-6xl p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+      <div className="flex flex-col max-w-6xl p-6 shadow-2xl space-y-6 overflow-hidden rounded-lg dark:bg-gray-50 dark:text-gray-800">
         <div className="flex space-x-4">
           <img
             alt=""

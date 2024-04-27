@@ -3,7 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const AddArtsCarfts = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const [stockStatus, setStockStatus] = useState("inStock");
   const [customization, setCustomization] = useState("yes");
   const handleSubmit = (e) => {
@@ -52,7 +52,15 @@ const AddArtsCarfts = () => {
           });
         }
       });
+    e.target.reset();
   };
+  if (loading) {
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
   return (
     <div className="my-8">
       <form onSubmit={handleSubmit} className=" space-y-4">
@@ -68,6 +76,7 @@ const AddArtsCarfts = () => {
                 name="category"
                 className="input input-bordered w-full"
                 placeholder=" item_name"
+                required
               />
             </label>
           </div>
@@ -83,6 +92,7 @@ const AddArtsCarfts = () => {
                 name="subcategory"
                 className="input input-bordered w-full"
                 placeholder="subcategory_name"
+                required
               />
             </label>
           </div>
@@ -99,6 +109,7 @@ const AddArtsCarfts = () => {
                 name="price"
                 className="input input-bordered w-full"
                 placeholder="price"
+                required
               />
             </label>
           </div>
@@ -112,6 +123,7 @@ const AddArtsCarfts = () => {
                 name="rating"
                 className="input input-bordered w-full"
                 placeholder="rating"
+                required
               />
             </label>
           </div>
@@ -130,6 +142,7 @@ const AddArtsCarfts = () => {
                 name="time"
                 className="input input-bordered w-full"
                 placeholder="processing_time"
+                required
               />
             </label>
           </div>
@@ -143,6 +156,7 @@ const AddArtsCarfts = () => {
                 name="photo"
                 className="input input-bordered w-full"
                 placeholder="photo"
+                required
               />
             </label>
           </div>
@@ -218,13 +232,17 @@ const AddArtsCarfts = () => {
                 name="description"
                 className="border-2 p-2 rounded-lg input-bordered w-full"
                 placeholder="description"
+                required
               ></textarea>
             </label>
           </div>
         </div>
-        <button className="btn btn-block font-bold text-xl hover:text-black hover:bg-green-500 bg-[#ff9409] text-white mb-6">
-          Add
-        </button>
+
+        <div className="flex justify-center mx-6">
+          <button className="btn btn-block font-bold text-xl hover:text-black hover:bg-green-500 bg-[#ff9409] text-white mb-6">
+            Add
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -4,11 +4,13 @@ import { useForm } from "react-hook-form";
 import { FaGithub, FaTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
-import { Link, useNavigation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     singInuser,
     loading,
@@ -18,7 +20,7 @@ const Login = () => {
     handleGithub,
   } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const navigate = useNavigation();
+
   const {
     register,
     handleSubmit,
@@ -35,6 +37,7 @@ const Login = () => {
     singInuser(email, password)
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location.state : "/");
         if (!user) {
           Swal.fire({
             title: "Good job!",
@@ -49,19 +52,19 @@ const Login = () => {
   };
   const handleGoogleLogin = () => {
     handleGoogle().then(() => {
-      navigate("/");
+      navigate(location?.state ? location.state : "/");
       toast.success("Successfully login with Google");
     });
   };
   const handleTwiiterLogin = () => {
     handleTwitter().then(() => {
-      navigate("/");
+      navigate(location?.state ? location.state : "/");
       toast.success("Successfully login with Twitter");
     });
   };
   const handleGIthubLogin = () => {
     handleGithub().then(() => {
-      navigate("/");
+      navigate(location?.state ? location.state : "/");
       toast.success("Successfully login with Github");
     });
   };

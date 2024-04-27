@@ -68,7 +68,7 @@ const Register = () => {
       .then((result) => {
         updateUser(username, photo).then(() => {});
         console.log(result.user);
-
+        navigate("/");
         Swal.fire({
           title: "Good job!",
           text: "User create successfully!",

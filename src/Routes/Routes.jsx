@@ -8,6 +8,8 @@ import NotFoundPage from "../pages/NotFoundPage";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import VeiwDetails from "../components/VeiwDetails";
+import Private from "../Private/Private";
+import UpdateProduct from "../components/UpdateProduct";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,16 +22,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/addartscrafts",
-        element: <AddArtsCarfts />,
+        element: (
+          <Private>
+            <AddArtsCarfts />
+          </Private>
+        ),
       },
       {
         path: "/allartscrafts",
         element: <AllArtsCarts />,
-        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/myartscrafts",
-        element: <MyArtsCarfts />,
+        element: (
+          <Private>
+            <MyArtsCarfts />
+          </Private>
+        ),
       },
       {
         path: "/login",
@@ -41,7 +50,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <VeiwDetails></VeiwDetails>,
+        element: (
+          <Private>
+            <VeiwDetails></VeiwDetails>
+          </Private>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
       },
     ],
   },
