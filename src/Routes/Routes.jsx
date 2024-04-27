@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import VeiwDetails from "../components/VeiwDetails";
 import Private from "../Private/Private";
 import UpdateProduct from "../components/UpdateProduct";
+import CeaftDetails from "../components/CeaftDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:5000/products"),
       },
       {
         path: "/addartscrafts",
@@ -58,7 +60,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <Private>
+            {" "}
+            <UpdateProduct></UpdateProduct>
+          </Private>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/craftdetails/:id",
+        element: <CeaftDetails></CeaftDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
       },

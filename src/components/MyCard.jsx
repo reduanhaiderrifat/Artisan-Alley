@@ -47,13 +47,15 @@ const MyCard = ({ product, setItems, products }) => {
     });
   };
   return (
-    <div>
-      <div className=" p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
-        <img
-          src={photo}
-          alt=""
-          className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
-        />
+    <div className="">
+      <div className=" p-6 rounded-lg shadow-md  dark:bg-gray-50 dark:text-gray-900">
+        <div className="overflow-hidden">
+          <img
+            src={photo}
+            alt=""
+            className="object-cover object-center w-full rounded-md h-72 transition-all hover:scale-110  dark:bg-gray-500"
+          />
+        </div>
         <div className="mt-6 mb-2">
           <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">
             <strong>Category :</strong> {category}

@@ -16,8 +16,21 @@ const MyArtsCarfts = () => {
   useEffect(() => {
     setItems(items);
   }, [items]);
+
+  if (products.length === 0) {
+    return (
+      <div className="h-screen flex justify-center items-center flex-col">
+        <h2 className=" text-5xl font-semibold text-center">
+          <i>No data available!</i>
+        </h2>{" "}
+        <h3 className=" text-5xl font-semibold mt-1">
+          <i>Please upload some data!</i>
+        </h3>
+      </div>
+    );
+  }
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="flex justify-center ">
         <div className="dropdown dropdown-hover mb-4">
           <div tabIndex={0} role="button" className="btn m-1">

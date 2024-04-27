@@ -7,7 +7,6 @@ const UpdateProduct = () => {
   const { user, loading } = useContext(AuthContext);
 
   const product = useLoaderData();
-  console.log(product);
   const {
     category,
     rating,
@@ -16,6 +15,8 @@ const UpdateProduct = () => {
     time,
     photo,
     subcategory,
+    customization,
+    stockStatus,
     description,
   } = product;
   const handleSubmit = (e) => {
@@ -57,7 +58,6 @@ const UpdateProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.matchedCount > 0) {
           Swal.fire({
             title: "Good job!",
@@ -191,6 +191,7 @@ const UpdateProduct = () => {
                   <span className="font-bold">Customization</span> <br />
                   <select
                     name="customization"
+                    defaultValue={customization}
                     id=""
                     className="input input-bordered w-full"
                   >
@@ -206,6 +207,7 @@ const UpdateProduct = () => {
                     name="stockStatus"
                     id=""
                     className="input input-bordered w-full"
+                    defaultValue={stockStatus}
                   >
                     <option value="inStock">inStock</option>
                     <option value="madeToOrder">madeToOrder</option>

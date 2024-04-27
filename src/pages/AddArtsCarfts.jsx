@@ -12,6 +12,7 @@ const AddArtsCarfts = () => {
     const category = form.category.value;
     const rating = form.rating.value;
     const price = form.price.value;
+    const name = form.name.value;
     const subcategory = form.subcategory.value;
     const time = form.time.value;
     const photo = form.photo.value;
@@ -23,6 +24,7 @@ const AddArtsCarfts = () => {
       category,
       rating,
       username,
+      name,
       email,
       image,
       price,
@@ -64,6 +66,38 @@ const AddArtsCarfts = () => {
   return (
     <div className="my-8">
       <form onSubmit={handleSubmit} className=" space-y-4">
+        {/* form quantity row */}
+        <div className="lg:flex gap-4 ">
+          <div className="form-control lg:w-1/2">
+            <label className="label">
+              <span className="label-text font-bold text-xl">User Name</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="text"
+                name="name"
+                className="input input-bordered w-full"
+                placeholder=" Username"
+                defaultValue={user.displayName}
+                required
+              />
+            </label>
+          </div>
+          <div className="form-control  lg:w-1/2">
+            <label className="label">
+              <span className="label-text font-bold text-xl">User Email</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="text"
+                name="email"
+                className="input input-bordered w-full"
+                placeholder="email"
+                value={user.email}
+              />
+            </label>
+          </div>
+        </div>
         {/* form quantity row */}
         <div className="lg:flex gap-4 ">
           <div className="form-control lg:w-1/2">

@@ -32,7 +32,7 @@ const AllArtsCarts = () => {
   }
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
