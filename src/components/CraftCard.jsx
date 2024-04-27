@@ -18,11 +18,13 @@ const CraftCard = ({ prod }) => {
             <h2 className="text-2xl font-semibold tracking-wide">
               {subcategory}
             </h2>
-            <p className="dark:text-gray-800">{description.slice(0, 100)}</p>
+            <p className="dark:text-gray-800 break-all">
+              {description.slice(0, 100)}
+            </p>
           </div>
           <Link
             to={`/craftdetails/${_id}`}
-            className="btn bg-[#ff9409] text-white text-lg hover:bg-green-500"
+            className="btn bg-[#fc9f27] text-white text-lg hover:bg-green-500"
           >
             Read more
           </Link>

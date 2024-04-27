@@ -188,7 +188,7 @@ const Navbar = () => {
                 </div>
                 <div
                   tabIndex={0}
-                  className="dropdown-content z-[1] card card-compact w-64 p-2 shadow-lg bg-white text-primary-content"
+                  className="dropdown-content z-50 card card-compact w-64 p-2 shadow-lg bg-white text-primary-content"
                 >
                   <div className="hidden md:block lg:block text-end">
                     <details className="dropdown ">

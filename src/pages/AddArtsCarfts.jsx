@@ -13,19 +13,20 @@ const AddArtsCarfts = () => {
     const rating = form.rating.value;
     const price = form.price.value;
     const name = form.name.value;
+    const user_email = form.email.value;
     const subcategory = form.subcategory.value;
     const time = form.time.value;
     const photo = form.photo.value;
     const description = form.description.value;
     const username = user.displayName;
-    const email = user.email;
+
     const image = user.photoURL;
     const products = {
       category,
       rating,
       username,
       name,
-      email,
+      user_email,
       image,
       price,
       time,
@@ -273,7 +274,7 @@ const AddArtsCarfts = () => {
         </div>
 
         <div className="flex justify-center mx-6">
-          <button className="btn btn-block font-bold text-xl hover:text-black hover:bg-green-500 bg-[#ff9409] text-white mb-6">
+          <button className="btn btn-block font-bold text-xl hover:text-black hover:bg-green-500 bg-[#fc9f27] text-white mb-6">
             Add
           </button>
         </div>

@@ -6,20 +6,19 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useLoaderData } from "react-router-dom";
 import Slider from "../components/Slider";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+import { useEffect, useState } from "react";
+
 import CraftCard from "../components/CraftCard";
 const Home = () => {
-  const { user } = useContext(AuthContext);
   const products = useLoaderData();
   const [product, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/products?email=${user?.email}`)
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       });
-  }, [user]);
+  }, []);
   console.log(product);
   return (
     <div className="min-h-screen">
@@ -45,9 +44,9 @@ const Home = () => {
       <section className="">
         <div className="text-center space-y-12 my-20">
           <h2 className=" text-3xl font-bold">Arts & Crafts</h2>
-          <p className=" text-xl">
+          <p className=" text-xl break-all">
             Arts and crafts describes a wide variety of activities involving
-            making things with one's own hands. Arts and crafts is usually a
+            making things with of one own hands. Arts and crafts is usually a
             hobby. Some crafts (art skills) have been practised since
             preshistoric times, others are more recent inventions.
           </p>

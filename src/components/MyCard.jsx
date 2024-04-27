@@ -62,7 +62,7 @@ const MyCard = ({ product, setItems, products }) => {
           </span>
           <h2 className="text-xl font-semibold tracking-wide">{subcategory}</h2>
         </div>
-        <p className="dark:text-gray-800">{description}</p>
+        <p className="dark:text-gray-800 break-all">{description}</p>
         <div className="flex justify-between items-center">
           <div className="mt-4 space-y-1">
             <p>

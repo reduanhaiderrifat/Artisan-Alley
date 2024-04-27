@@ -7,7 +7,7 @@ const MyArtsCarfts = () => {
   const [items, setProducts] = useState([]);
   const [products, setItems] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/products?email=${user?.email}`)
+    fetch(`http://localhost:5000/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
