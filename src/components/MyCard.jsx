@@ -60,13 +60,15 @@ const MyCard = ({ product, setItems, products }) => {
           <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">
             <strong>Category :</strong> {category}
           </span>
-          <h2 className="text-xl font-semibold tracking-wide">{subcategory}</h2>
+          <h2 className="text-xl font-semibold tracking-wide mt-3">
+            {subcategory}
+          </h2>
         </div>
         <p className="dark:text-gray-800 break-all">{description}</p>
         <div className="flex justify-between items-center">
           <div className="mt-4 space-y-1">
             <p>
-              <strong>Publist : </strong>
+              <strong>Publist At : </strong>
               {timestamp.split("T")[0]}
             </p>
             <p>

@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import MyCard from "../components/MyCard";
+import { IoIosArrowDown } from "react-icons/io";
 
 const MyArtsCarfts = () => {
   const { user } = useContext(AuthContext) || {};
   const [items, setProducts] = useState([]);
   const [products, setItems] = useState([]);
+  const [filter, setFilter] = useState(null);
   useEffect(() => {
     fetch(`http://localhost:5000/user/${user?.email}`)
       .then((res) => res.json())
@@ -14,9 +16,20 @@ const MyArtsCarfts = () => {
       });
   }, [user]);
   useEffect(() => {
-    setItems(items);
-  }, [items]);
-
+    if (filter === null) {
+      setItems(items);
+    } else {
+      const filteredProducts = items.filter(
+        (product) => product.customization === filter
+      );
+      setItems(filteredProducts);
+    }
+  }, [items, filter]);
+  const handleFilter = (ALL) => {
+    if (ALL === "all") {
+      setFilter(null);
+    }
+  };
   if (products.length === 0) {
     return (
       <div className="h-screen flex justify-center items-center flex-col">
@@ -34,17 +47,20 @@ const MyArtsCarfts = () => {
       <div className="flex justify-center ">
         <div className="dropdown dropdown-hover mb-4">
           <div tabIndex={0} role="button" className="btn m-1">
-            Filter by Customization
+            Filter by Customization <IoIosArrowDown />
           </div>
           <ul
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Yes</a>
+              <a onClick={() => setFilter("yes")}> Yes</a>
             </li>
             <li>
-              <a>No</a>
+              <a onClick={() => setFilter("no")}>No</a>
+            </li>
+            <li>
+              <a onClick={() => handleFilter("all")}>All</a>
             </li>
           </ul>
         </div>
