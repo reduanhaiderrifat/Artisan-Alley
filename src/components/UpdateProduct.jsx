@@ -185,10 +185,11 @@ const UpdateProduct = () => {
           </div>
           {/* form quantity row */}
           <div className="lg:flex gap-4">
-            <div className="form-control lg:w-1/2">
+            <div className="form-control lg:w-1/2 mt-6">
               <div className="">
                 <label className=" space-y-2">
-                  <span className="font-bold">Customization</span> <br />
+                  <span className="font-bold text-xl">Customization</span>{" "}
+                  <br />
                   <select
                     name="customization"
                     defaultValue={customization}
@@ -202,7 +203,7 @@ const UpdateProduct = () => {
               </div>
               <div className="mt-8">
                 <label className=" space-y-2">
-                  <span className="font-bold">StockStatus</span> <br />
+                  <span className="font-bold text-xl">StockStatus</span> <br />
                   <select
                     name="stockStatus"
                     id=""

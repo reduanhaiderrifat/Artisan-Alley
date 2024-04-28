@@ -3,11 +3,12 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const CeaftDetails = () => {
   const product = useLoaderData();
+  const navigation = useNavigation();
   const { loading } = useContext(AuthContext);
   const {
     category,
@@ -20,7 +21,7 @@ const CeaftDetails = () => {
     photo,
     image,
     timestamp,
-    email,
+    user_email,
     description,
     customization,
   } = product;
@@ -31,6 +32,12 @@ const CeaftDetails = () => {
       </div>
     );
   }
+  if (navigation.state === "loading")
+    return (
+      <div className="h-[calc(100vh-80px)] flex justify-center items-center">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
   return (
     <div>
       {" "}
@@ -95,7 +102,7 @@ const CeaftDetails = () => {
               </label>
               <p className="flex items-center gap-1 break-all">
                 <MdAttachEmail />
-                <strong>Contact :</strong> {email}
+                <strong>Contact :</strong> {user_email}
               </p>
             </div>
             <div className=" space-y-2">

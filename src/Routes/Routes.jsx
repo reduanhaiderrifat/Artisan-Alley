@@ -11,6 +11,8 @@ import VeiwDetails from "../components/VeiwDetails";
 import Private from "../Private/Private";
 import UpdateProduct from "../components/UpdateProduct";
 import CeaftDetails from "../components/CeaftDetails";
+import CategoryCard from "../components/CategoryCard";
+import CategoryDetails from "../components/CategoryDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -77,6 +79,16 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.id}`),
+      },
+      {
+        path: "/categorys/:category",
+        element: <CategoryCard></CategoryCard>,
+      },
+      {
+        path: "/categoryDetails/:id",
+        element: <CategoryDetails></CategoryDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/categories/${params.id}`),
       },
     ],
   },

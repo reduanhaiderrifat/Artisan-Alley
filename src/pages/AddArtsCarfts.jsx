@@ -18,13 +18,11 @@ const AddArtsCarfts = () => {
     const time = form.time.value;
     const photo = form.photo.value;
     const description = form.description.value;
-    const username = user.displayName;
 
     const image = user.photoURL;
     const products = {
       category,
       rating,
-      username,
       name,
       user_email,
       image,
@@ -103,7 +101,9 @@ const AddArtsCarfts = () => {
         <div className="lg:flex gap-4 ">
           <div className="form-control lg:w-1/2">
             <label className="label">
-              <span className="label-text font-bold text-xl">Item Name</span>
+              <span className="label-text font-bold text-xl">
+                Category Name
+              </span>
             </label>
             <label className="input-group">
               <input

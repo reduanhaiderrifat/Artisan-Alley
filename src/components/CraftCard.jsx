@@ -26,7 +26,7 @@ const CraftCard = ({ prod }) => {
             to={`/craftdetails/${_id}`}
             className="btn bg-[#fc9f27] text-white text-lg hover:bg-green-500"
           >
-            Read more
+            Veiw Details
           </Link>
         </div>
       </div>

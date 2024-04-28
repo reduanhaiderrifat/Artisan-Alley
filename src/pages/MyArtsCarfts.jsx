@@ -6,6 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const MyArtsCarfts = () => {
   const { user } = useContext(AuthContext) || {};
   const [items, setProducts] = useState([]);
+  const [loader, setLoader] = useState(true);
   const [products, setItems] = useState([]);
   const [filter, setFilter] = useState(null);
   useEffect(() => {
@@ -13,6 +14,7 @@ const MyArtsCarfts = () => {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
+        setLoader(false);
       });
   }, [user]);
   useEffect(() => {
@@ -30,6 +32,13 @@ const MyArtsCarfts = () => {
       setFilter(null);
     }
   };
+  if (loader) {
+    return (
+      <div className="flex justify-center items-center h-[calc(100vh-100px)]">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
   if (products.length === 0) {
     return (
       <div className="h-screen flex justify-center items-center flex-col">

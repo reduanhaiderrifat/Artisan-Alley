@@ -8,6 +8,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const VeiwDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [loader, setLoader] = useState(true);
   const { loading } = useContext(AuthContext);
   const {
     category,
@@ -28,12 +29,12 @@ const VeiwDetails = () => {
     fetch(`http://localhost:5000/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProduct(data);
+        setLoader(false);
       });
   }, [id]);
 
-  if (loading) {
+  if (loading || loader) {
     return (
       <div className="h-[calc(100vh-80px)] flex justify-center items-center">
         <span className="loading loading-spinner loading-lg"></span>
