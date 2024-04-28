@@ -10,6 +10,8 @@ import { useContext, useEffect, useState } from "react";
 import CraftCard from "../components/CraftCard";
 import { AuthContext } from "../Provider/AuthProvider";
 import PaintingCard from "../components/PaintingCard";
+import { MdArrowDropDown } from "react-icons/md";
+import { FaCheck, FaShoppingCart } from "react-icons/fa";
 const Home = () => {
   const [products, SetProducts] = useState([]);
   const { loading } = useContext(AuthContext);
@@ -121,7 +123,78 @@ const Home = () => {
           </div>
         )}
       </section>
-
+      <section className="discount">
+        <div className=" text-center">
+          <h2 className=" text-4xl font-bold my-12 text-[#fc7527]">
+            Discount <span className=" text-red-600">%</span>
+          </h2>
+          <p>
+            Explore a world of creativity and imagination with our exclusive art
+            collection, now available at unbeatable prices for a limited time
+            only!
+          </p>
+        </div>
+        {products.slice(0, 6).map((pro) => (
+          <div key={pro._id}>
+            <div className="dark:bg-gray-100 dark:text-gray-800">
+              <div className="container max-w-6xl  p-6 mx-auto space-y-6 sm:space-y-12">
+                <div className="block max-w-sm gap-3 mx-auto  sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
+                  <img
+                    src={pro.photo}
+                    alt=""
+                    className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
+                  />
+                  <div className="p-6 space-y-2 border-2 lg:col-span-5">
+                    <h3 className="text-2xl font-semibold flex items-center sm:text-4xl ">
+                      Regular License <MdArrowDropDown />
+                      <span className="ml-4 text-2xl">
+                        <sup>$</sup>30
+                      </span>
+                    </h3>
+                    <span className="text-xs dark:text-gray-600 ">
+                      {pro.timestamp.split("T")[0]} POST
+                    </span>
+                    <div className="divider"></div>
+                    <div className="flex items-center gap-2">
+                      <FaCheck /> <p>Quality checked by Envato</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaCheck /> <p>Included:Future updates</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaCheck />
+                      <p>Included:6 months support from TemplateTrip</p>
+                    </div>
+                    <div className="flex gap-6 ">
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          className="checkbox checkbox-md"
+                        />
+                        <span>Extend support to 12 months</span>
+                      </label>
+                      <div className="flex gap-4 text-xl font-semibold items-center">
+                        <span>
+                          <del>
+                            <sup>$</sup>14.07
+                          </del>
+                        </span>
+                        <span>
+                          <sup>$</sup>6.38
+                        </span>
+                      </div>
+                    </div>
+                    <button className="btn w-full font-semibold hover:border-[#82B440] hover:bg-transparent hover:text-[#82B440] bg-[#82B440] text-xl text-white">
+                      <FaShoppingCart /> Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
       <section>
         <div className="text-center my-14 space-y-8">
           <h1 className="text-4xl font-bold text-[#fc7527] ">Gallery</h1>
