@@ -78,7 +78,7 @@ const Login = () => {
         backgroundImage: "url(https://i.ibb.co/z7KZfdX/login.jpg)",
       }}
     >
-      <div className="bg-[white]/70 rounded-3xl w-2/5 text-black">
+      <div className="bg-[white]/70 rounded-3xl lg:w-2/5 text-black">
         <div className="hero-content flex-col shadow-lg  rounded-3xl">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl font-bold">
@@ -149,7 +149,7 @@ const Login = () => {
               </div>
               <span className=" text-red-500"> {error.split(":")[1]}</span>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">
+                <button className="btn hover:bg-transparent hover:text-sky-500 text-lg hover:border-sky-500 text-white bg-sky-400">
                   {loading ? (
                     <span className="loading loading-spinner loading-md"></span>
                   ) : (

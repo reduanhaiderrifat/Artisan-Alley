@@ -65,7 +65,7 @@ const MyArtsCarfts = () => {
               words={["  Filter by Customization "]}
               loop={1}
               cursor
-              cursorStyle="_"
+              cursorStyle="."
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1000}

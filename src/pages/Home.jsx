@@ -98,7 +98,7 @@ const Home = () => {
       </section>
       <section>
         <div className="">
-          <h2 className=" text-4xl font-bold flex text-[#fc7527] justify-center my-14">
+          <h2 className="text-xl md:text-2xl lg:text-4xl font-bold flex text-[#fc7527] justify-center my-14">
             <span className="mr-2"> Arts & Crafts {""} </span>
             <Typewriter
               words={["Painting Category"]}

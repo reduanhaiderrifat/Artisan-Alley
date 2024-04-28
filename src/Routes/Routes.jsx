@@ -13,6 +13,7 @@ import UpdateProduct from "../components/UpdateProduct";
 import CeaftDetails from "../components/CeaftDetails";
 import CategoryCard from "../components/CategoryCard";
 import CategoryDetails from "../components/CategoryDetails";
+import Copyright from "../pages/Copyright";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
           fetch(
             `https://art-craft-server-iota.vercel.app/products/${params.id}`
           ),
+      },
+      {
+        path: "/copyright",
+        element: <Copyright />,
       },
     ],
   },

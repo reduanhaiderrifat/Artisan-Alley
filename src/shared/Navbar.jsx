@@ -12,10 +12,11 @@ const Navbar = () => {
   const { user, logOut, loading, updateUser } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
+
   const links = (
     <>
       <NavLink
-        className="hover:bg-base-200 p-2 hover:rounded-lg"
+        className="hover:bg-base-200 font-bold  p-2 hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -29,7 +30,8 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        className="hover:bg-base-200 p-2 hover:rounded-lg"
+        target="_blank"
+        className="hover:bg-base-200 p-2 font-bold  hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -43,7 +45,8 @@ const Navbar = () => {
         All Arts&Crafts
       </NavLink>
       <NavLink
-        className="hover:bg-base-200 p-2 hover:rounded-lg"
+        target="_blank"
+        className="hover:bg-base-200 p-2 font-bold  hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -57,7 +60,8 @@ const Navbar = () => {
         Add Arts & Crafts
       </NavLink>
       <NavLink
-        className="hover:bg-base-200 p-2 hover:rounded-lg"
+        target="_blank"
+        className="hover:bg-base-200 p-2 font-bold  hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -106,6 +110,9 @@ const Navbar = () => {
       toast.success("Profile update successfully");
     });
   };
+  const handleRefresh = () => {
+    window.location.reload();
+  };
   return (
     <div>
       <div className="my-4">
@@ -136,7 +143,10 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button className=" font-bold text-3xl text-[#ff9409]">
+            <button
+              onClick={handleRefresh}
+              className=" font-bold text-3xl text-[#ff9409]"
+            >
               Artisan Alley
             </button>
           </div>

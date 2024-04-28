@@ -110,7 +110,7 @@ const Register = () => {
         backgroundImage: "url(https://i.ibb.co/8z70qsM/sunset.jpg)",
       }}
     >
-      <div className="bg-[white]/30 rounded-3xl w-1/2 text-black">
+      <div className="bg-[white]/30 rounded-3xl lg:w-1/2 text-black">
         <div className="hero-content flex-col shadow-lg rounded-3xl ">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl font-bold">
@@ -313,7 +313,7 @@ const Register = () => {
             Allready have an account.Please{" "}
             <Link
               to="/login"
-              className="btn-link no-underline font-bold text-[#232472]"
+              className="btn-link no-underline font-bold text-[#63ee48]"
             >
               login
             </Link>
