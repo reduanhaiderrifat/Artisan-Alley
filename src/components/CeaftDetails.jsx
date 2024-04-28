@@ -5,6 +5,7 @@ import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { MdAttachEmail } from "react-icons/md";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const CeaftDetails = () => {
   const product = useLoaderData();
@@ -40,7 +41,9 @@ const CeaftDetails = () => {
     );
   return (
     <div>
-      {" "}
+      <Helmet>
+        <title>Artisan Alley_CraftDetails</title>
+      </Helmet>
       <div className="flex justify-center">
         <div className="flex flex-col max-w-6xl p-6 shadow-2xl space-y-6 overflow-hidden rounded-lg dark:bg-gray-50 dark:text-gray-800">
           <div className="flex space-x-4">

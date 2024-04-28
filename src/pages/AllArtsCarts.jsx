@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const AllArtsCarts = () => {
   const [products, setProducts] = useState([]);
@@ -32,6 +33,9 @@ const AllArtsCarts = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Artisan Alley_All Arts&Crafts</title>
+      </Helmet>
       <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}

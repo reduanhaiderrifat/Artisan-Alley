@@ -1,9 +1,13 @@
 import { Link, useRouteError } from "react-router-dom";
 import gif from "../../public/Animation - 1709742745397.gif";
+import { Helmet } from "react-helmet-async";
 const NotFoundPage = () => {
   const error = useRouteError();
   return (
     <div>
+      <Helmet>
+        <title>Artisan Alley_Not Found</title>
+      </Helmet>
       <div className="  grid grid-cols-1    ">
         <img className="w-56 text-center mx-auto" src={gif} alt="" />
         <div className=" h-screen  flex gap-3 flex-col text-center -mt-9 justify-center items-center">

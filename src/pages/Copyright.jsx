@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const Copyright = () => {
   return (
     <div className="flex justify-center my-4">
+      <Helmet>
+        <title>Artisan Alley_Copy Rights</title>
+      </Helmet>
       <div className=" space-y-6 w-1/2 border p-4">
         <img className="h-60" src="https://i.ibb.co/1Z99VrJ/copy.png" alt="" />
         <p>

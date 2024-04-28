@@ -1,10 +1,14 @@
 import Proptypes from "prop-types";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 const CraftCard = ({ prod }) => {
   const { photo, _id, category, subcategory, description } = prod;
   return (
     <div>
+      <Helmet>
+        <title>Artisan Alley_CraftCard</title>
+      </Helmet>
       <div className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
         <div className=" overflow-hidden">
           <img

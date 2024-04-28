@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import MyCard from "../components/MyCard";
 import { IoIosArrowDown } from "react-icons/io";
 import { Typewriter } from "react-simple-typewriter";
+import { Helmet } from "react-helmet-async";
 
 const MyArtsCarfts = () => {
   const { user } = useContext(AuthContext) || {};
@@ -54,6 +55,9 @@ const MyArtsCarfts = () => {
   }
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Artisan Alley_My Arts&Crafts</title>
+      </Helmet>
       <div className="flex justify-center ">
         <div className="dropdown dropdown-hover mb-4">
           <div

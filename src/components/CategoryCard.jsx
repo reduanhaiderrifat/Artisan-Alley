@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { FaStar } from "react-icons/fa";
 import { GrMoney } from "react-icons/gr";
 import { Link, useParams } from "react-router-dom";
@@ -20,6 +21,9 @@ const CategoryCard = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Artisan Alley_CategoryCard</title>
+      </Helmet>
       {loading ? (
         <div className="h-[calc(100vh-100px)] flex justify-center items-center">
           <span className="loading loading-spinner loading-lg"></span>

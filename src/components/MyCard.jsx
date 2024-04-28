@@ -4,6 +4,7 @@ import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 const MyCard = ({ product, setItems, products }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const {
@@ -56,6 +57,9 @@ const MyCard = ({ product, setItems, products }) => {
   };
   return (
     <div className="">
+      <Helmet>
+        <title>Artisan Alley_My ArtCard</title>
+      </Helmet>
       <div className=" p-6 rounded-lg shadow-md  dark:bg-gray-50 dark:text-gray-900">
         <div className="overflow-hidden">
           <img

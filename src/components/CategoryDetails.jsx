@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
@@ -24,6 +25,9 @@ const CategoryDetails = () => {
   } = items;
   return (
     <div className="flex justify-center">
+      <Helmet>
+        <title>Artisan Alley_CategoryDetails</title>
+      </Helmet>
       <div className="flex flex-col max-w-6xl p-6 shadow-2xl space-y-6 overflow-hidden rounded-lg dark:bg-gray-50 dark:text-gray-800">
         <div className="flex space-x-4">
           <img

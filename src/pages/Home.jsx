@@ -13,6 +13,7 @@ import PaintingCard from "../components/PaintingCard";
 import { MdArrowDropDown } from "react-icons/md";
 import { FaCheck, FaShoppingCart } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
   const [products, SetProducts] = useState([]);
   const { loading } = useContext(AuthContext);
@@ -48,6 +49,9 @@ const Home = () => {
   }, []);
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Artisan Alley_Home</title>
+      </Helmet>
       {loading || loader ? (
         <div className="flex justify-center items-center h-[150px]">
           <span className="loading loading-spinner loading-lg"></span>

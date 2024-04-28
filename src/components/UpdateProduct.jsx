@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProduct = () => {
   const { user, loading } = useContext(AuthContext);
@@ -78,7 +79,9 @@ const UpdateProduct = () => {
   }
   return (
     <div>
-      {" "}
+      <Helmet>
+        <title>Artisan Alley_Update Product</title>
+      </Helmet>
       <div className="my-8">
         <form onSubmit={handleSubmit} className=" space-y-4">
           {/* form products information row */}

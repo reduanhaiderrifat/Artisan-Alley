@@ -16,7 +16,7 @@ const Slider = ({ slider }) => {
           <p className="font-semibold  text-[#D10000] text-md md:text-lg lg:text-xl">
             {subcategory}
           </p>
-          <p className="text-[#FFFF00] text-sm font-medium w-2/3">
+          <p className="text-[#FFFF00] hover:text-black text-sm font-medium w-2/3">
             {description.slice(0, 300)}
           </p>
         </div>
