@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import MyCard from "../components/MyCard";
 import { IoIosArrowDown } from "react-icons/io";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyArtsCarfts = () => {
   const { user } = useContext(AuthContext) || {};
@@ -55,8 +56,21 @@ const MyArtsCarfts = () => {
     <div className="min-h-screen">
       <div className="flex justify-center ">
         <div className="dropdown dropdown-hover mb-4">
-          <div tabIndex={0} role="button" className="btn m-1">
-            Filter by Customization <IoIosArrowDown />
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1 bg-[#ff9409] text-white hover:border-[#ff9409] hover:bg-transparent hover:text-[#ff9409]"
+          >
+            <Typewriter
+              words={["  Filter by Customization "]}
+              loop={1}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+            <IoIosArrowDown />
           </div>
           <ul
             tabIndex={0}

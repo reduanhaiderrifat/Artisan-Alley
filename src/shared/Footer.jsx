@@ -1,3 +1,5 @@
+import { Typewriter } from "react-simple-typewriter";
+
 const Footer = () => {
   return (
     <footer className="px-4 divide-y dark:bg-gray-100 text-white dark:text-gray-800 bg-[#010313]">
@@ -10,11 +12,19 @@ const Footer = () => {
           >
             <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600"></div>
             <span className="self-center text-2xl font-semibold">
-              Arts & Crafts
+              <Typewriter
+                words={[" Artisan Alley"]}
+                loop={50}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
             </span>
           </a>
         </div>
-        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3   sm:grid-cols-4">
+        <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3   sm:grid-cols-3">
           <div className="space-y-3">
             <h3 className="tracking-wide uppercase dark:text-gray-900">
               Contact

@@ -54,7 +54,7 @@ const CategoryCard = () => {
                             </div>
                             <p className="flex items-center gap-2">
                               <strong>Rating :</strong> {painting.rating}{" "}
-                              <FaStar />
+                              <FaStar className="text-orange-500" />
                             </p>
 
                             <div className="flex items-center gap-2">

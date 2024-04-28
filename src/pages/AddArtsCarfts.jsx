@@ -110,7 +110,7 @@ const AddArtsCarfts = () => {
                 type="text"
                 name="category"
                 className="input input-bordered w-full"
-                placeholder=" item_name"
+                placeholder=" category_name"
                 required
               />
             </label>

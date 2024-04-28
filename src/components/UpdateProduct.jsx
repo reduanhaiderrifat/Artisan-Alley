@@ -84,14 +84,16 @@ const UpdateProduct = () => {
           <div className="lg:flex gap-4 ">
             <div className="form-control lg:w-1/2">
               <label className="label">
-                <span className="label-text font-bold text-xl">Item Name</span>
+                <span className="label-text font-bold text-xl">
+                  Category Name
+                </span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="category"
                   className="input input-bordered w-full"
-                  placeholder=" item_name"
+                  placeholder=" category_name"
                   defaultValue={category}
                   required
                 />

@@ -1,4 +1,4 @@
-import { FaUserEdit } from "react-icons/fa";
+import { FaStar, FaUserEdit } from "react-icons/fa";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -65,10 +65,10 @@ const MyCard = ({ product, setItems, products }) => {
           />
         </div>
         <div className="mt-6 mb-2">
-          <span className="block text-xs font-medium tracking-widest uppercase dark:text-violet-600">
+          <span className="block text-md font-medium tracking-widest uppercase dark:text-violet-600">
             <strong>Category :</strong> {category}
           </span>
-          <h2 className="text-xl font-semibold tracking-wide mt-3">
+          <h2 className="text-xl font-semibold text-[#ff9409] tracking-wide mt-3">
             {subcategory}
           </h2>
         </div>
@@ -96,9 +96,9 @@ const MyCard = ({ product, setItems, products }) => {
               <strong>Customization : </strong>
               {customization}
             </p>
-            <p>
+            <p className="flex items-center gap-2">
               <strong>Rating : </strong>
-              {rating}
+              {rating} <FaStar className="text-orange-500" />
             </p>
           </div>
 
