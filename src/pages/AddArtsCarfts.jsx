@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 const AddArtsCarfts = () => {
   const { user, loading } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const AddArtsCarfts = () => {
     const category = form.category.value;
     const rating = form.rating.value;
     const price = form.price.value;
-    const name = form.name.value;
+    const username = form.name.value;
     const user_email = form.email.value;
     const subcategory = form.subcategory.value;
     const time = form.time.value;
@@ -23,7 +24,7 @@ const AddArtsCarfts = () => {
     const products = {
       category,
       rating,
-      name,
+      username,
       user_email,
       image,
       price,
@@ -65,193 +66,207 @@ const AddArtsCarfts = () => {
   return (
     <div className="my-8">
       <form onSubmit={handleSubmit} className=" space-y-4">
-        {/* form quantity row */}
-        <div className="lg:flex gap-4 ">
-          <div className="form-control lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">User Name</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="name"
-                className="input input-bordered w-full"
-                placeholder=" Username"
-                defaultValue={user.displayName}
-                required
-              />
-            </label>
+        {/* form user information row */}
+        <Fade direction="down" triggerOnce={true}>
+          <div className="lg:flex gap-4 ">
+            <div className="form-control lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">User Name</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="name"
+                  className="input input-bordered w-full"
+                  placeholder=" Username"
+                  defaultValue={user.displayName}
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-control  lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">User Email</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="email"
+                  className="input input-bordered w-full"
+                  placeholder="email"
+                  value={user.email}
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control  lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">User Email</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="email"
-                className="input input-bordered w-full"
-                placeholder="email"
-                value={user.email}
-              />
-            </label>
+        </Fade>
+        {/* form products information row */}
+        <Fade direction="down" delay={500} triggerOnce={true}>
+          <div className="lg:flex gap-4 ">
+            <div className="form-control lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">
+                  Category Name
+                </span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="category"
+                  className="input input-bordered w-full"
+                  placeholder=" category_name"
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-control  lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">
+                  Subcategory Name
+                </span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="subcategory"
+                  className="input input-bordered w-full"
+                  placeholder="subcategory_name"
+                  required
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* form quantity row */}
-        <div className="lg:flex gap-4 ">
-          <div className="form-control lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">
-                Category Name
-              </span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="category"
-                className="input input-bordered w-full"
-                placeholder=" category_name"
-                required
-              />
-            </label>
+        </Fade>
+        {/* form price rating row */}
+        <Fade direction="down" delay={1000} triggerOnce={true}>
+          <div className="lg:flex gap-4">
+            <div className="form-control lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">Price</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="price"
+                  className="input input-bordered w-full"
+                  placeholder="price"
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-control  lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">Rating</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="rating"
+                  className="input input-bordered w-full"
+                  placeholder="rating"
+                  required
+                />
+              </label>
+            </div>
           </div>
-          <div className="form-control  lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">
-                Subcategory Name
-              </span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="subcategory"
-                className="input input-bordered w-full"
-                placeholder="subcategory_name"
-                required
-              />
-            </label>
+        </Fade>
+        {/* form time photo row */}
+        <Fade direction="down" delay={1500} triggerOnce={true}>
+          <div className="lg:flex gap-4">
+            {" "}
+            <div className="form-control lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">
+                  Processing Time
+                </span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="time"
+                  className="input input-bordered w-full"
+                  placeholder="processing_time"
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-control  lg:w-1/2">
+              <label className="label">
+                <span className="label-text font-bold text-xl">Photo</span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="text"
+                  name="photo"
+                  className="input input-bordered w-full"
+                  placeholder="photo"
+                  required
+                />
+              </label>
+            </div>
           </div>
-        </div>
-        {/* form quantity row */}
-        <div className="lg:flex gap-4">
-          <div className="form-control lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">Price</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="price"
-                className="input input-bordered w-full"
-                placeholder="price"
-                required
-              />
-            </label>
-          </div>
-          <div className="form-control  lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">Rating</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="rating"
-                className="input input-bordered w-full"
-                placeholder="rating"
-                required
-              />
-            </label>
-          </div>
-        </div>
-        {/* form quantity row */}
-        <div className="lg:flex gap-4">
-          <div className="form-control lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">
-                Processing Time
-              </span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="time"
-                className="input input-bordered w-full"
-                placeholder="processing_time"
-                required
-              />
-            </label>
-          </div>
-          <div className="form-control  lg:w-1/2">
-            <label className="label">
-              <span className="label-text font-bold text-xl">Photo</span>
-            </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="photo"
-                className="input input-bordered w-full"
-                placeholder="photo"
-                required
-              />
-            </label>
-          </div>
-        </div>
+        </Fade>
         {/* form quantity row */}
         <div className="lg:flex gap-4">
           <div className="form-control lg:w-1/2">
             <div className="">
-              <label className="label">
-                <span className="label-text font-bold text-xl">
-                  StockStatus
-                </span>
-              </label>
-              <label className="input-group flex items-center gap-3">
-                <input
-                  type="radio"
-                  name="stock"
-                  value="inStock"
-                  checked={stockStatus === "inStock"}
-                  onChange={() => setStockStatus("inStock")}
-                  className="radio radio-success"
-                />
-                <span> In stock</span>
-                <input
-                  type="radio"
-                  name="made"
-                  value="madeToOrder"
-                  checked={stockStatus === "madeToOrder"}
-                  onChange={() => setStockStatus("madeToOrder")}
-                  className="radio radio-success"
-                />
-                <span> Made to Order</span>
-              </label>
+              <Fade direction="left" delay={1800} triggerOnce={true}>
+                {" "}
+                <label className="label">
+                  <span className="label-text font-bold text-xl">
+                    StockStatus
+                  </span>
+                </label>
+                <label className="input-group flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="stock"
+                    value="inStock"
+                    checked={stockStatus === "inStock"}
+                    onChange={() => setStockStatus("inStock")}
+                    className="radio radio-success"
+                  />
+                  <span> In stock</span>
+                  <input
+                    type="radio"
+                    name="made"
+                    value="madeToOrder"
+                    checked={stockStatus === "madeToOrder"}
+                    onChange={() => setStockStatus("madeToOrder")}
+                    className="radio radio-success"
+                  />
+                  <span> Made to Order</span>
+                </label>
+              </Fade>
             </div>
             <div className="mt-12">
-              <label className="label">
-                <span className="label-text font-bold text-xl">
-                  Customization
-                </span>
-              </label>
-              <label className="input-group flex items-center gap-3">
-                <input
-                  type="radio"
-                  name="yes"
-                  value="madeToOrder"
-                  checked={customization === "yes"}
-                  onChange={() => setCustomization("yes")}
-                  className="radio radio-success"
-                />
-                <span> Yes</span>
-                <input
-                  type="radio"
-                  value="madeToOrder"
-                  checked={customization === "no"}
-                  onChange={() => setCustomization("no")}
-                  name="no"
-                  className="radio radio-success"
-                />
-                <span> No</span>
-              </label>
+              <Fade direction="left" delay={2400} triggerOnce={true}>
+                <label className="label">
+                  <span className="label-text font-bold text-xl">
+                    Customization
+                  </span>
+                </label>
+                <label className="input-group flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="yes"
+                    value="madeToOrder"
+                    checked={customization === "yes"}
+                    onChange={() => setCustomization("yes")}
+                    className="radio radio-success"
+                  />
+                  <span> Yes</span>
+                  <input
+                    type="radio"
+                    value="madeToOrder"
+                    checked={customization === "no"}
+                    onChange={() => setCustomization("no")}
+                    name="no"
+                    className="radio radio-success"
+                  />
+                  <span> No</span>
+                </label>
+              </Fade>
             </div>
           </div>
           <div className="form-control ml-3 lg:w-1/2">
@@ -272,12 +287,13 @@ const AddArtsCarfts = () => {
             </label>
           </div>
         </div>
-
-        <div className="flex justify-center mx-6">
-          <button className="btn btn-block font-bold text-xl hover:text-black hover:bg-green-500 bg-[#fc9f27] text-white mb-6">
-            Add
-          </button>
-        </div>
+        <Fade direction="up" triggerOnce={true}>
+          <div className="flex justify-center mx-6">
+            <button className="btn btn-block font-bold text-xl hover:text-black hover:bg-green-500 bg-[#fc9f27] text-white mb-6">
+              Add
+            </button>
+          </div>
+        </Fade>
       </form>
     </div>
   );

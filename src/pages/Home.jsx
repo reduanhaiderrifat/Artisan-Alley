@@ -104,7 +104,7 @@ const Home = () => {
               words={["Category"]}
               loop={10}
               cursor
-              cursorStyle="_"
+              cursorStyle="."
               typeSpeed={70}
               deleteSpeed={50}
               delaySpeed={1000}

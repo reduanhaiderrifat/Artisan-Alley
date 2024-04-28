@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 
 const UpdateProduct = () => {
   const { user, loading } = useContext(AuthContext);
@@ -80,143 +81,154 @@ const UpdateProduct = () => {
       {" "}
       <div className="my-8">
         <form onSubmit={handleSubmit} className=" space-y-4">
-          {/* form quantity row */}
-          <div className="lg:flex gap-4 ">
-            <div className="form-control lg:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold text-xl">
-                  Category Name
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="category"
-                  className="input input-bordered w-full"
-                  placeholder=" category_name"
-                  defaultValue={category}
-                  required
-                />
-              </label>
+          {/* form products information row */}
+          <Fade direction="down" triggerOnce={true}>
+            <div className="lg:flex gap-4 ">
+              <div className="form-control lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">
+                    Category Name
+                  </span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="category"
+                    className="input input-bordered w-full"
+                    placeholder=" category_name"
+                    defaultValue={category}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="form-control  lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">
+                    Subcategory Name
+                  </span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="subcategory"
+                    className="input input-bordered w-full"
+                    placeholder="subcategory_name"
+                    defaultValue={subcategory}
+                    required
+                  />
+                </label>
+              </div>
             </div>
-            <div className="form-control  lg:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold text-xl">
-                  Subcategory Name
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="subcategory"
-                  className="input input-bordered w-full"
-                  placeholder="subcategory_name"
-                  defaultValue={subcategory}
-                  required
-                />
-              </label>
+          </Fade>
+          {/* form price rating row */}
+          <Fade direction="down" delay={1000} triggerOnce={true}>
+            <div className="lg:flex gap-4">
+              <div className="form-control lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">Price</span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="price"
+                    className="input input-bordered w-full"
+                    placeholder="price"
+                    defaultValue={price}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="form-control  lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">Rating</span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="rating"
+                    className="input input-bordered w-full"
+                    placeholder="rating"
+                    defaultValue={rating}
+                    required
+                  />
+                </label>
+              </div>
             </div>
-          </div>
-          {/* form quantity row */}
-          <div className="lg:flex gap-4">
-            <div className="form-control lg:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold text-xl">Price</span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="price"
-                  className="input input-bordered w-full"
-                  placeholder="price"
-                  defaultValue={price}
-                  required
-                />
-              </label>
+          </Fade>
+          {/* form price rating row */}
+          <Fade direction="down" delay={1400} triggerOnce={true}>
+            <div className="lg:flex gap-4">
+              <div className="form-control lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">
+                    Processing Time
+                  </span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="time"
+                    className="input input-bordered w-full"
+                    placeholder="processing_time"
+                    defaultValue={time}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="form-control  lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">Photo</span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
+                    name="photo"
+                    className="input input-bordered w-full"
+                    placeholder="photo"
+                    defaultValue={photo}
+                    required
+                  />
+                </label>
+              </div>
             </div>
-            <div className="form-control  lg:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold text-xl">Rating</span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="rating"
-                  className="input input-bordered w-full"
-                  placeholder="rating"
-                  defaultValue={rating}
-                  required
-                />
-              </label>
-            </div>
-          </div>
-          {/* form quantity row */}
-          <div className="lg:flex gap-4">
-            <div className="form-control lg:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold text-xl">
-                  Processing Time
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="time"
-                  className="input input-bordered w-full"
-                  placeholder="processing_time"
-                  defaultValue={time}
-                  required
-                />
-              </label>
-            </div>
-            <div className="form-control  lg:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold text-xl">Photo</span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  name="photo"
-                  className="input input-bordered w-full"
-                  placeholder="photo"
-                  defaultValue={photo}
-                  required
-                />
-              </label>
-            </div>
-          </div>
-          {/* form quantity row */}
+          </Fade>
+          {/* form customaic=zation status descripetion  row */}
           <div className="lg:flex gap-4">
             <div className="form-control lg:w-1/2 mt-6">
-              <div className="">
-                <label className=" space-y-2">
-                  <span className="font-bold text-xl">Customization</span>{" "}
-                  <br />
-                  <select
-                    name="customization"
-                    defaultValue={customization}
-                    id=""
-                    className="input input-bordered w-full"
-                  >
-                    <option value="yes">yes</option>
-                    <option value="no">no</option>
-                  </select>
-                </label>
-              </div>
-              <div className="mt-8">
-                <label className=" space-y-2">
-                  <span className="font-bold text-xl">StockStatus</span> <br />
-                  <select
-                    name="stockStatus"
-                    id=""
-                    className="input input-bordered w-full"
-                    defaultValue={stockStatus}
-                  >
-                    <option value="inStock">inStock</option>
-                    <option value="madeToOrder">madeToOrder</option>
-                  </select>
-                </label>
-              </div>
+              <Fade direction="down" delay={1800} triggerOnce={true}>
+                <div className="">
+                  <label className=" space-y-2">
+                    <span className="font-bold text-xl">Customization</span>{" "}
+                    <br />
+                    <select
+                      name="customization"
+                      defaultValue={customization}
+                      id=""
+                      className="input input-bordered w-full"
+                    >
+                      <option value="yes">yes</option>
+                      <option value="no">no</option>
+                    </select>
+                  </label>
+                </div>
+              </Fade>
+              <Fade direction="down" delay={2200} triggerOnce={true}>
+                <div className="mt-8">
+                  <label className=" space-y-2">
+                    <span className="font-bold text-xl">StockStatus</span>{" "}
+                    <br />
+                    <select
+                      name="stockStatus"
+                      id=""
+                      className="input input-bordered w-full"
+                      defaultValue={stockStatus}
+                    >
+                      <option value="inStock">inStock</option>
+                      <option value="madeToOrder">madeToOrder</option>
+                    </select>
+                  </label>
+                </div>
+              </Fade>
             </div>
             <div className="form-control ml-3 lg:w-1/2">
               <label className="label">
@@ -239,11 +251,13 @@ const UpdateProduct = () => {
               </label>
             </div>
           </div>
-          <div className="flex justify-center mx-6">
-            <button className="btn w-full  font-bold text-xl hover:text-black hover:bg-green-500 bg-[#ff9409] text-white mb-6">
-              Update
-            </button>
-          </div>
+          <Fade direction="up" triggerOnce={true}>
+            <div className="flex justify-center mx-6">
+              <button className="btn w-full  font-bold text-xl hover:text-black hover:bg-green-500 bg-[#ff9409] text-white mb-6">
+                Update
+              </button>
+            </div>
+          </Fade>
         </form>
       </div>
     </div>
