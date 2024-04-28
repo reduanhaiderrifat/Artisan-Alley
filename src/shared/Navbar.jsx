@@ -137,7 +137,7 @@ const Navbar = () => {
               </div>
             </div>
             <button className=" font-bold text-3xl text-[#ff9409]">
-              Arts & Crafts
+              Artisan Alley
             </button>
           </div>
           <div className="hidden lg:flex">

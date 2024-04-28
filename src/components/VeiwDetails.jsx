@@ -21,7 +21,8 @@ const VeiwDetails = () => {
     photo,
     image,
     timestamp,
-    email,
+
+    user_email,
     description,
     customization,
   } = product;
@@ -103,7 +104,7 @@ const VeiwDetails = () => {
             </label>
             <p className="flex items-center gap-1 break-all">
               <MdAttachEmail />
-              <strong>Contact :</strong> {email}
+              <strong>Contact :</strong> {user_email}
             </p>
           </div>
           <div className=" space-y-2">

@@ -3,7 +3,9 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import Proptypes from "prop-types";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useState } from "react";
 const MyCard = ({ product, setItems, products }) => {
+  const [showFullDescription, setShowFullDescription] = useState(false);
   const {
     photo,
     _id,
@@ -46,6 +48,12 @@ const MyCard = ({ product, setItems, products }) => {
       }
     });
   };
+
+  const toggleDescription = () => {
+    setShowFullDescription(
+      (prevShowFullDescription) => !prevShowFullDescription
+    );
+  };
   return (
     <div className="">
       <div className=" p-6 rounded-lg shadow-md  dark:bg-gray-50 dark:text-gray-900">
@@ -64,7 +72,12 @@ const MyCard = ({ product, setItems, products }) => {
             {subcategory}
           </h2>
         </div>
-        <p className="dark:text-gray-800 break-all">{description}</p>
+        <p className="dark:text-gray-800 break-all">
+          {showFullDescription ? description : description.slice(0, 500)}.......
+          <button className="btn-link no-underline" onClick={toggleDescription}>
+            {showFullDescription ? "Read less" : "Read more"}
+          </button>
+        </p>
         <div className="flex justify-between items-center">
           <div className="mt-4 space-y-1">
             <p>

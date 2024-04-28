@@ -38,31 +38,34 @@ const CategoryCard = () => {
                         className="object-cover h-96 object-center w-full rounded-t-md dark:bg-gray-500"
                       />
                       <div className="flex flex-col justify-between p-6 space-y-8">
-                        <div className="space-y-2">
-                          <span>{painting.subcategory}</span>
-                          <h2 className="text-3xl font-semibold tracking-wide">
-                            {category}
-                          </h2>
-                          <p className="dark:text-gray-800">
-                            {painting.description.slice(0, 500)}
-                          </p>
-                        </div>
-                        <div className=" space-y-2">
-                          <div>
-                            <strong>processing Time</strong> : {painting.time}
+                        <div className="">
+                          <div className="space-y-2">
+                            <span>{painting.subcategory}</span>
+                            <h2 className="text-3xl font-semibold tracking-wide">
+                              {category}
+                            </h2>
+                            <p className="dark:text-gray-800">
+                              {painting.description.slice(0, 490)}...
+                            </p>
                           </div>
-                          <p className="flex items-center gap-2">
-                            <strong>Rating :</strong> {painting.rating}{" "}
-                            <FaStar />
-                          </p>
+                          <div className=" space-y-2">
+                            <div>
+                              <strong>processing Time</strong> : {painting.time}
+                            </div>
+                            <p className="flex items-center gap-2">
+                              <strong>Rating :</strong> {painting.rating}{" "}
+                              <FaStar />
+                            </p>
 
-                          <div className="flex items-center gap-2">
-                            <GrMoney /> <strong>Price</strong>: {painting.price}
+                            <div className="flex items-center gap-2">
+                              <GrMoney /> <strong>Price</strong>:{" "}
+                              {painting.price}
+                            </div>
                           </div>
                         </div>
                         <Link
-                          to={`categoryDetails/${painting._id}`}
-                          className="btn text-xl bg-[#f7a73e] text-white hover:bg-transparent hover:text-[#f7a73e] hover:border-[#f7a73e]"
+                          to={`/categoryDetails/${painting._id}`}
+                          className="btn text-xl bg-[#f7a73e] text-white  hover:bg-transparent hover:text-[#f7a73e] hover:border-[#f7a73e]"
                         >
                           View Details
                         </Link>

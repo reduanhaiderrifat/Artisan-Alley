@@ -68,10 +68,10 @@ const CeaftDetails = () => {
               alt=""
               className=" w-full mb-4 h-96 md:h-[450px] lg:h-[550px] dark:bg-gray-500"
             />
-            <h2 className="mb-1 text-xl font-semibold">
+            <h2 className="mb-4 text-xl font-semibold">
               <span className=" font-bold">Category</span> : {category}
             </h2>
-            <h2 className="mb-1 text-xl font-semibold">
+            <h2 className="mb-3 text-xl font-semibold">
               <span className=" font-bold"> Subcategory</span> : {subcategory}
             </h2>
             <p className="text-sm dark:text-gray-600 break-all">
