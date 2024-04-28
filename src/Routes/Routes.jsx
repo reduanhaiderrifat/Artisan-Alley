@@ -67,7 +67,9 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://art-craft-server-iota.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/craftdetails/:id",
@@ -77,7 +79,9 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://art-craft-server-iota.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/categorys/:category",
@@ -91,7 +95,9 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://art-craft-server-iota.vercel.app/products/${params.id}`
+          ),
       },
     ],
   },

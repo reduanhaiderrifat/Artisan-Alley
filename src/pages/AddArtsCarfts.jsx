@@ -36,7 +36,7 @@ const AddArtsCarfts = () => {
       customization,
     };
     console.log(products);
-    fetch("http://localhost:5000/products", {
+    fetch("https://art-craft-server-iota.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

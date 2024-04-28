@@ -252,7 +252,7 @@ const Navbar = () => {
               </div>
             ) : (
               <>
-                <div className="dropdown lg:hidden dropdown-hover dropdown-left dropdown-bottom">
+                <div className="dropdown md:hidden lg:hidden dropdown-hover dropdown-left dropdown-bottom">
                   <div
                     tabIndex={0}
                     role="button"
@@ -281,7 +281,7 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                <div className="hidden lg:flex space-x-2">
+                <div className="hidden md:flex lg:flex space-x-2">
                   <Link
                     to="/login"
                     className="btn text-[#fc9f27] bg-transparent border-[#fc9f27] hover:text-white hover:bg-[#fc6a27]"

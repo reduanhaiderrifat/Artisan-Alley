@@ -11,7 +11,7 @@ const MyArtsCarfts = () => {
   const [products, setItems] = useState([]);
   const [filter, setFilter] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://art-craft-server-iota.vercel.app/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

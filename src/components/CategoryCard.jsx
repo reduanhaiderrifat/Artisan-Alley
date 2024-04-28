@@ -10,7 +10,7 @@ const CategoryCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://art-craft-server-iota.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setPaints(data);

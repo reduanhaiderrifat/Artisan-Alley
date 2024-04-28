@@ -20,7 +20,7 @@ const Home = () => {
   const [paintings, setPaintings] = useState([]);
   const [loader, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://art-craft-server-iota.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         data.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
@@ -30,7 +30,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://art-craft-server-iota.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         SetProducts(data);
@@ -39,7 +39,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/paintings")
+    fetch("https://art-craft-server-iota.vercel.app/paintings")
       .then((res) => res.json())
       .then((data) => {
         setPaintings(data);
@@ -101,7 +101,7 @@ const Home = () => {
           <h2 className=" text-4xl font-bold flex text-[#fc7527] justify-center my-14">
             <span className="mr-2"> Arts & Crafts {""} </span>
             <Typewriter
-              words={["Category"]}
+              words={["Painting Category"]}
               loop={10}
               cursor
               cursorStyle="."

@@ -14,7 +14,7 @@ const Footer = () => {
             <span className="self-center text-2xl font-semibold">
               <Typewriter
                 words={[" Artisan Alley"]}
-                loop={50}
+                loop={500}
                 cursor
                 cursorStyle="."
                 typeSpeed={70}
@@ -117,7 +117,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 text-sm text-center dark:text-gray-600">
-        © Copyright 1986. All Rights Reserved.
+        <Typewriter
+          words={["© Copyright 1986. All Rights Reserved."]}
+          loop={1}
+          cursor
+          cursorStyle="."
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
       </div>
     </footer>
   );

@@ -7,7 +7,7 @@ const AllArtsCarts = () => {
   const { loading } = useContext(AuthContext);
   const [load, setLoad] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://art-craft-server-iota.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
