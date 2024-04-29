@@ -84,6 +84,9 @@ const UpdateProduct = () => {
       </Helmet>
       <div className="my-8 border rounded-lg bg-base-200 p-4">
         <form onSubmit={handleSubmit} className=" space-y-4 ">
+          <h2 className="text-center text-2xl font-bold inter">
+            Update Your Art & Crafts Information
+          </h2>
           {/* form products information row */}
           <Fade direction="down" triggerOnce={true}>
             <div className="lg:flex gap-4 ">

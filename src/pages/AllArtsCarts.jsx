@@ -70,7 +70,7 @@ const AllArtsCarts = () => {
                     className="btn bg-transparent hover:bg-[#fc9927] hover:text-white text-[#fc5927] border-[#fc5927]"
                   >
                     View
-                  </Link>{" "}
+                  </Link>
                 </td>
               </tr>
             ))}

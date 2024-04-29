@@ -71,6 +71,9 @@ const AddArtsCarfts = () => {
       </Helmet>
       <div className="my-8 px-6 border rounded-lg bg-base-200">
         <form onSubmit={handleSubmit} className=" space-y-4">
+          <h2 className="text-center text-2xl font-bold inter">
+            Add Your Art & Crafts Information
+          </h2>
           {/* form user information row */}
           <Fade direction="down" triggerOnce={true}>
             <div className="lg:flex gap-4 ">
@@ -249,7 +252,7 @@ const AddArtsCarfts = () => {
                 </Fade>
               </div>
               <div className="mt-12">
-                <Fade direction="left" delay={1600} triggerOnce={true}>
+                <Fade direction="left" delay={1800} triggerOnce={true}>
                   <label className="label">
                     <span className="label-text font-bold text-xl">
                       Customization
