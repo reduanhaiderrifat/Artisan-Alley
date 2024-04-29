@@ -81,7 +81,7 @@ const Home = () => {
       <section className="mt-6">
         <div className="text-center space-y-12 my-20">
           <h2 className=" text-3xl font-bold text-[#fc7527]">Arts & Crafts</h2>
-          <p className=" text-xl break-all">
+          <p className=" text-xl break-all inter">
             Arts and crafts describes a wide variety of activities involving
             making things with of one own hands. Arts and crafts is usually a
             hobby. Some crafts (art skills) have been practised since
@@ -106,7 +106,7 @@ const Home = () => {
             <span className="mr-2"> Arts & Crafts {""} </span>
             <Typewriter
               words={["Painting Category"]}
-              loop={10}
+              loop={500}
               cursor
               cursorStyle="."
               typeSpeed={70}
@@ -114,7 +114,7 @@ const Home = () => {
               delaySpeed={1000}
             />
           </h2>
-          <p className=" text-center mb-3">
+          <p className=" text-center mb-3 inter">
             The Arts & Crafts category encompasses a wide range of creative
             endeavors that involve crafting, making, and artistic expression.
             From traditional handicrafts to modern DIY projects, this category
@@ -142,7 +142,7 @@ const Home = () => {
           <h2 className=" text-4xl font-bold my-12 text-[#fc7527]">
             Discount <span className=" text-red-600">%</span>
           </h2>
-          <p>
+          <p className="inter">
             Explore a world of creativity and imagination with our exclusive art
             collection, now available at unbeatable prices for a limited time
             only!
@@ -232,7 +232,7 @@ const Home = () => {
       <section>
         <div className="text-center my-14 space-y-8">
           <h1 className="text-4xl font-bold text-[#fc7527] ">Gallery</h1>
-          <p>
+          <p className="inter">
             A gallery is a space dedicated to the exhibition and appreciation of
             visual art. It serves as a cultural hub where artists showcase their
             works to the public and visitors engage with art in various forms.

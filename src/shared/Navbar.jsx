@@ -140,12 +140,12 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <button
+            <a
               onClick={handleRefresh}
-              className=" font-bold text-3xl text-[#ff9409]"
+              className="  text-2xl nosifer-regular text-[#ff9409]"
             >
               Artisan Alley
-            </button>
+            </a>
           </div>
           <div className="hidden lg:flex">
             <ul className="flex items-center gap-6">{links}</ul>

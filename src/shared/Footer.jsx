@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
@@ -12,7 +13,7 @@ const Footer = () => {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600"></div>
-            <span className="self-center text-2xl font-semibold">
+            <span className="self-center nosifer-regular text-2xl font-semibold">
               <Typewriter
                 words={[" Artisan Alley"]}
                 loop={500}
@@ -30,69 +31,76 @@ const Footer = () => {
             <h3 className="tracking-wide uppercase dark:text-gray-900">
               Contact
             </h3>
-            <ul className="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  <span> 01873600588</span>
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  support@gmail.com
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  report latter
-                </a>
-              </li>
-            </ul>
+            <Fade cascade>
+              <ul className="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    <span> 01873600588</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    support@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    report latter
+                  </a>
+                </li>
+              </ul>
+            </Fade>
           </div>
           <div className="space-y-3">
             <h3 className="tracking-wide uppercase dark:text-gray-900">
               Ruels & Conditions
             </h3>
-            <ul className="space-y-1">
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
+            <Fade cascade>
+              <ul className="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">
+                    Terms of Service
+                  </a>
+                </li>
+              </ul>
+            </Fade>
           </div>
 
           <div className="space-y-3 ">
             <div className="uppercase dark:text-gray-900">Social media</div>
             <div className="flex justify-start space-x-3">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                title="Facebook"
-                className="flex items-center p-1"
-              >
-                <FaFacebook size={25} className="hover:text-blue-400" />
-              </a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                title="Twitter"
-                className="flex items-center p-1"
-              >
-                <FaTwitter size={25} className="hover:text-sky-400" />
-              </a>
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                title="Instagram"
-                className="flex items-center p-1"
-              >
-                <FaInstagram size={25} className="hover:text-red-400" />
-              </a>
+              <Fade cascade>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Facebook"
+                  className="flex items-center p-1"
+                >
+                  <FaFacebook size={25} className="hover:text-blue-400" />
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Twitter"
+                  className="flex items-center p-1"
+                >
+                  <FaTwitter size={25} className="hover:text-sky-400" />
+                </a>
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  title="Instagram"
+                  className="flex items-center p-1"
+                >
+                  <FaInstagram size={25} className="hover:text-red-400" />
+                </a>
+              </Fade>
             </div>
           </div>
         </div>

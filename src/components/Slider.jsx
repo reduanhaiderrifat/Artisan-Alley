@@ -10,7 +10,7 @@ const Slider = ({ slider }) => {
           alt=""
         />
         <div className=" absolute md:space-y-2 lg:space-y-3 left-[5%] top-[30%] md:left-[30%] lg:top-[30%] bg-center">
-          <h2 className="text-[#fc7527] text-xl font-bold md:text-3xl lg:text-5xl">
+          <h2 className="text-[#fc7527] text-xl font-bold md:text-3xl nosifer-regular lg:text-5xl">
             {category}
           </h2>
           <p className="font-semibold  text-[#D10000] text-md md:text-lg lg:text-xl">

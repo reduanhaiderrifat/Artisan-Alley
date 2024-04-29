@@ -50,7 +50,7 @@ const UpdateProduct = () => {
       photo,
       subcategory,
     };
-    console.log(upadateproducts);
+    // console.log(upadateproducts);
     fetch(`https://art-craft-server-iota.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
@@ -60,7 +60,8 @@ const UpdateProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.matchedCount > 0) {
+        console.log(data);
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Good job!",
             text: "Product Update successfully!",
@@ -83,7 +84,7 @@ const UpdateProduct = () => {
         <title>Artisan Alley_Update Product</title>
       </Helmet>
       <div className="my-8">
-        <form onSubmit={handleSubmit} className=" space-y-4">
+        <form onSubmit={handleSubmit} className=" space-y-4 ">
           {/* form products information row */}
           <Fade direction="down" triggerOnce={true}>
             <div className="lg:flex gap-4 ">
