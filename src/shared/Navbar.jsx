@@ -30,7 +30,6 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        target="_blank"
         className="hover:bg-base-200 p-2 font-bold  hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
@@ -45,8 +44,7 @@ const Navbar = () => {
         All Arts&Crafts
       </NavLink>
       <NavLink
-        target="_blank"
-        className="hover:bg-base-200 p-2 font-bold  hover:rounded-lg"
+        className="hover:bg-base-200 p-2 font-bold   hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -60,8 +58,7 @@ const Navbar = () => {
         Add Arts & Crafts
       </NavLink>
       <NavLink
-        target="_blank"
-        className="hover:bg-base-200 p-2 font-bold  hover:rounded-lg"
+        className="hover:bg-base-200 p-2 font-bold   hover:rounded-lg"
         style={({ isActive, isTransiTion }) => {
           return {
             fontWeight: isActive ? "bold" : "",
@@ -137,7 +134,7 @@ const Navbar = () => {
                 }`}
               >
                 <div className=" h-full w-64 ">
-                  <ul className="bg-white p-4 px-6 space-y-5 flex flex-col rounded-r-lg">
+                  <ul className="bg-white p-4 px-6 text-black shadow-lg space-y-5 flex flex-col rounded-r-lg">
                     {links}
                   </ul>
                 </div>
@@ -272,7 +269,7 @@ const Navbar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                    className="dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-52"
                   >
                     <div className=" flex flex-col gap-2">
                       <Link

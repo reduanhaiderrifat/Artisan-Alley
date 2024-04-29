@@ -1,14 +1,10 @@
 import Proptypes from "prop-types";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const PaintingCard = ({ painting }) => {
   const { category, photo } = painting;
   return (
     <>
-      <Helmet>
-        <title>Artisan Alley_PaintingCard</title>
-      </Helmet>
       <Link to={`/categorys/${category}`}>
         <div className=" relative hover:scale-110 transition-all p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
           <img

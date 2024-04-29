@@ -78,7 +78,7 @@ const Login = () => {
         <title>Artisan Alley_Login</title>
       </Helmet>
       <div
-        className="hero min-h-screen "
+        className="hero min-h-screen py-4"
         style={{
           backgroundImage: "url(https://i.ibb.co/z7KZfdX/login.jpg)",
         }}

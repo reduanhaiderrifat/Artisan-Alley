@@ -57,7 +57,7 @@ const CategoryDetails = () => {
           <h2 className="mb-1 text-xl font-semibold">
             <span className=" font-bold">{category}</span>
           </h2>
-          <h2 className="mb-1 text-xl font-semibold">
+          <h2 className="my-2 mt-4 text-xl font-semibold">
             <span className=" font-bold"> Subcategory</span> : {subcategory}
           </h2>
           <p className="text-sm dark:text-gray-600 break-all">

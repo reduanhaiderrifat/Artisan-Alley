@@ -1,7 +1,6 @@
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-
 const Footer = () => {
   return (
     <footer className="px-4 divide-y dark:bg-gray-100 text-white dark:text-gray-800 bg-[#010313]">
@@ -101,7 +100,7 @@ const Footer = () => {
       <div className="py-6 text-sm text-center dark:text-gray-600">
         <Link to="/copyright">
           <Typewriter
-            words={["© Copyright 1986. All Rights Reserved."]}
+            words={["© Copyright 2024. All Rights Reserved."]}
             loop={1}
             cursor
             cursorStyle="."

@@ -44,9 +44,9 @@ const CategoryCard = () => {
                       <div className="flex flex-col justify-between p-6 space-y-8">
                         <div className="">
                           <div className="space-y-2">
-                            <span>{painting.subcategory}</span>
+                            <span>{category} </span>
                             <h2 className="text-3xl font-semibold tracking-wide">
-                              {category}
+                              {painting.subcategory}
                             </h2>
                             <p className="dark:text-gray-800">
                               {painting.description.slice(0, 490)}...

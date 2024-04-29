@@ -6,8 +6,12 @@ const Copyright = () => {
       <Helmet>
         <title>Artisan Alley_Copy Rights</title>
       </Helmet>
-      <div className=" space-y-6 w-1/2 border p-4">
-        <img className="h-60" src="https://i.ibb.co/1Z99VrJ/copy.png" alt="" />
+      <div className=" space-y-6 md:w-3/5 lg:w-1/2 border p-4">
+        <img
+          className="h-60 flex justify-center"
+          src="https://i.ibb.co/1Z99VrJ/copy.png"
+          alt=""
+        />
         <p>
           "All artworks and designs showcased on this website are protected by
           copyright law © [2024] [Artisan Alley]. All rights reserved. Any
@@ -19,7 +23,7 @@ const Copyright = () => {
             professional to ensure your copyright conditions are comprehensive
             and enforceable.
           </p>
-          <p>
+          <p className="mt-4">
             1. "Copyright © 2024 by John Smith. All rights reserved.
             Unauthorized duplication is prohibited." ("সর্বস্তরে সংরক্ষিত ©
             [2024] [আর্টিসান আলি]. সমস্ত অধিকার সংরক্ষিত। অনুমতি ছাড়া ব্যবহার,

@@ -48,7 +48,7 @@ const VeiwDetails = () => {
       <Helmet>
         <title>Artisan Alley_VeiwDetails</title>
       </Helmet>
-      <div className="flex flex-col max-w-6xl p-6 shadow-2xl space-y-6 overflow-hidden rounded-lg dark:bg-gray-50 dark:text-gray-800">
+      <div className="flex my-4 flex-col max-w-6xl p-6 shadow-xl space-y-6 overflow-hidden rounded-lg dark:bg-gray-50 dark:text-gray-800">
         <div className="flex space-x-4">
           <img
             alt=""
@@ -75,10 +75,10 @@ const VeiwDetails = () => {
             className=" w-full mb-4 h-96 md:h-[450px] lg:h-[550px] dark:bg-gray-500"
           />
           <h2 className="mb-1 text-xl font-semibold">
-            <span className=" font-bold">{category}</span>
+            <span className=" font-bold">Category </span> : {category}
           </h2>
-          <h2 className="mb-1 text-xl font-semibold">
-            <span className=" font-bold"> Subcategory</span> : {subcategory}
+          <h2 className=" text-xl mt-4 my-2 font-semibold">
+            <span className=" font-bold "> {subcategory}</span>
           </h2>
           <p className="text-sm dark:text-gray-600 break-all">
             <strong>Description</strong>: {description}

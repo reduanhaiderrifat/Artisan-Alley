@@ -345,6 +345,58 @@ const Home = () => {
                   src="https://i.ibb.co/kMKKTSj/river-forest-with-river-trees-337384-20353.jpg"
                 />
               </div>
+              <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+                <img
+                  src="https://i.ibb.co/7KCXdCG/superhero.jpg"
+                  alt=""
+                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/2sxRsz5/skatch.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/WzHyt1p/seperhero3.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/hsCxSjd/seperhero1.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/2ZKS0by/scatch.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/1Mj9Kyk/moutain2.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/5LgjsXT/mountaint4.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/FVjn7NQ/mountain3.jpg"
+                />
+                <img
+                  alt=""
+                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                  src="https://i.ibb.co/yW5WLwC/mauntain.jpg"
+                />
+                <img
+                  src="https://i.ibb.co/6FrpTNK/oil.jpg"
+                  alt=""
+                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square"
+                />
+              </div>
             </section>
           </div>
         )}
