@@ -52,7 +52,7 @@ const Home = () => {
       <Helmet>
         <title>Artisan Alley_Home</title>
       </Helmet>
-      {loading || loader ? (
+      {loader ? (
         <div className="flex justify-center items-center h-[150px]">
           <span className="loading loading-spinner loading-lg"></span>
         </div>
@@ -92,7 +92,7 @@ const Home = () => {
             preshistoric times, others are more recent inventions.
           </p>
         </div>
-        {loader || loading ? (
+        {loader ? (
           <div className="flex justify-center items-center h-[calc(100px-70)]">
             <span className="loading loading-spinner loading-lg"></span>
           </div>
@@ -126,7 +126,7 @@ const Home = () => {
             techniques
           </p>
         </div>
-        {loader || loading ? (
+        {loader ? (
           <div className="flex justify-center items-center h-[calc(100px-70)]">
             <span className="loading loading-spinner loading-lg"></span>
           </div>
@@ -177,11 +177,11 @@ const Home = () => {
                           />
 
                           <div className="p-6 space-y-2 border-2 lg:col-span-5">
-                            <Fade direction="down">
+                            <Fade triggerOnce={true} direction="down">
                               <h3 className="text-2xl font-semibold flex items-center sm:text-4xl ">
-                                Regular License <MdArrowDropDown />
+                                Regular Price <MdArrowDropDown />
                                 <span className="ml-4 text-2xl">
-                                  <sup>$</sup>30
+                                  <sup>$</sup>40-70 up
                                 </span>
                               </h3>
                               <span className="text-xs dark:text-gray-600 ">
@@ -189,21 +189,29 @@ const Home = () => {
                               </span>
                             </Fade>
                             <div className="divider"></div>
-                            <Fade direction="left">
+                            <Fade triggerOnce={true} direction="left">
                               <div className="flex items-center gap-2">
-                                <FaCheck /> <p>Quality checked by Envato</p>
+                                <FaCheck /> <p>Quality checked by Owner</p>
                               </div>
                             </Fade>
-                            <Fade direction="left" duration={2000}>
+                            <Fade
+                              triggerOnce={true}
+                              direction="left"
+                              duration={2000}
+                            >
                               <div className="flex items-center gap-2">
-                                <FaCheck /> <p>Included:Future updates</p>
+                                <FaCheck /> <p>Included: Future updates</p>
                               </div>
                             </Fade>
-                            <Fade direction="left" duration={3000}>
+                            <Fade
+                              triggerOnce={true}
+                              direction="left"
+                              duration={3000}
+                            >
                               <div className="flex items-center gap-2">
                                 <FaCheck />
                                 <p>
-                                  Included:6 months support from TemplateTrip
+                                  Included:6 months support for any conditions
                                 </p>
                               </div>
                             </Fade>
@@ -214,20 +222,20 @@ const Home = () => {
                                   defaultChecked
                                   className="checkbox checkbox-md"
                                 />
-                                <span>Extend support to 12 months</span>
+                                <span>Use our membership token</span>
                               </label>
                               <div className="flex gap-4 text-xl font-semibold items-center">
                                 <span>
                                   <del>
-                                    <sup>$</sup>14.07
+                                    <sup>$</sup>54.07
                                   </del>
                                 </span>
                                 <span>
-                                  <sup>$</sup>6.38
+                                  <sup>$</sup>36.38
                                 </span>
                               </div>
                             </div>
-                            <Fade direction="up">
+                            <Fade triggerOnce={true} direction="up">
                               <button className="btn w-full font-semibold hover:border-[#82B440] hover:bg-transparent hover:text-[#82B440] bg-[#82B440] text-xl text-white">
                                 <FaShoppingCart /> Add to Cart
                               </button>
