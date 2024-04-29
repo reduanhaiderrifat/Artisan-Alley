@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Zoom } from "swiper/modules";
+import { Autoplay, Navigation, Pagination, Zoom } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/zoom";
@@ -61,12 +61,16 @@ const Home = () => {
           <Swiper
             slidesPerView={1}
             navigation={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
             zoom={true}
             loop={true}
             pagination={{
               clickable: true,
             }}
-            modules={[Navigation, Zoom, Pagination, Navigation]}
+            modules={[Autoplay, Navigation, Zoom, Pagination, Navigation]}
             className="mySwiper"
           >
             {products.map((slider) => (
@@ -155,76 +159,86 @@ const Home = () => {
         ) : (
           <>
             {" "}
-            {products.slice(0, 8).map((pro) => (
-              <div key={pro._id}>
-                <div className="dark:bg-gray-100 dark:text-gray-800">
-                  <div className="container max-w-6xl  p-6 mx-auto space-y-6 sm:space-y-12">
-                    <div className="block max-w-sm gap-3 mx-auto  sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
-                      <img
-                        src={pro.photo}
-                        alt=""
-                        className="object-cover  w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
-                      />
+            {products.slice(0, 4).map((pro, idx) => (
+              <>
+                <div key={pro._id} className=" overflow-hidden">
+                  <Fade
+                    duration={2000}
+                    triggerOnce={true}
+                    direction={idx % 2 === 0 ? "right" : "left"}
+                  >
+                    <div className="dark:bg-gray-100 dark:text-gray-800">
+                      <div className="container max-w-6xl  p-6 mx-auto space-y-6 sm:space-y-12">
+                        <div className="block max-w-sm gap-3 mx-auto  sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
+                          <img
+                            src={pro.photo}
+                            alt=""
+                            className="object-cover  w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500"
+                          />
 
-                      <div className="p-6 space-y-2 border-2 lg:col-span-5">
-                        <Fade direction="down">
-                          <h3 className="text-2xl font-semibold flex items-center sm:text-4xl ">
-                            Regular License <MdArrowDropDown />
-                            <span className="ml-4 text-2xl">
-                              <sup>$</sup>30
-                            </span>
-                          </h3>
-                          <span className="text-xs dark:text-gray-600 ">
-                            {pro.timestamp.split("T")[0]} POST
-                          </span>
-                        </Fade>
-                        <div className="divider"></div>
-                        <Fade direction="left">
-                          <div className="flex items-center gap-2">
-                            <FaCheck /> <p>Quality checked by Envato</p>
-                          </div>
-                        </Fade>
-                        <Fade direction="left" duration={2000}>
-                          <div className="flex items-center gap-2">
-                            <FaCheck /> <p>Included:Future updates</p>
-                          </div>
-                        </Fade>
-                        <Fade direction="left" duration={3000}>
-                          <div className="flex items-center gap-2">
-                            <FaCheck />
-                            <p>Included:6 months support from TemplateTrip</p>
-                          </div>
-                        </Fade>
-                        <div className="flex gap-6 ">
-                          <label className="flex items-center gap-2">
-                            <input
-                              type="checkbox"
-                              defaultChecked
-                              className="checkbox checkbox-md"
-                            />
-                            <span>Extend support to 12 months</span>
-                          </label>
-                          <div className="flex gap-4 text-xl font-semibold items-center">
-                            <span>
-                              <del>
-                                <sup>$</sup>14.07
-                              </del>
-                            </span>
-                            <span>
-                              <sup>$</sup>6.38
-                            </span>
+                          <div className="p-6 space-y-2 border-2 lg:col-span-5">
+                            <Fade direction="down">
+                              <h3 className="text-2xl font-semibold flex items-center sm:text-4xl ">
+                                Regular License <MdArrowDropDown />
+                                <span className="ml-4 text-2xl">
+                                  <sup>$</sup>30
+                                </span>
+                              </h3>
+                              <span className="text-xs dark:text-gray-600 ">
+                                {pro.timestamp.split("T")[0]} POST
+                              </span>
+                            </Fade>
+                            <div className="divider"></div>
+                            <Fade direction="left">
+                              <div className="flex items-center gap-2">
+                                <FaCheck /> <p>Quality checked by Envato</p>
+                              </div>
+                            </Fade>
+                            <Fade direction="left" duration={2000}>
+                              <div className="flex items-center gap-2">
+                                <FaCheck /> <p>Included:Future updates</p>
+                              </div>
+                            </Fade>
+                            <Fade direction="left" duration={3000}>
+                              <div className="flex items-center gap-2">
+                                <FaCheck />
+                                <p>
+                                  Included:6 months support from TemplateTrip
+                                </p>
+                              </div>
+                            </Fade>
+                            <div className="flex gap-6 ">
+                              <label className="flex items-center gap-2">
+                                <input
+                                  type="checkbox"
+                                  defaultChecked
+                                  className="checkbox checkbox-md"
+                                />
+                                <span>Extend support to 12 months</span>
+                              </label>
+                              <div className="flex gap-4 text-xl font-semibold items-center">
+                                <span>
+                                  <del>
+                                    <sup>$</sup>14.07
+                                  </del>
+                                </span>
+                                <span>
+                                  <sup>$</sup>6.38
+                                </span>
+                              </div>
+                            </div>
+                            <Fade direction="up">
+                              <button className="btn w-full font-semibold hover:border-[#82B440] hover:bg-transparent hover:text-[#82B440] bg-[#82B440] text-xl text-white">
+                                <FaShoppingCart /> Add to Cart
+                              </button>
+                            </Fade>
                           </div>
                         </div>
-                        <Fade direction="up">
-                          <button className="btn w-full font-semibold hover:border-[#82B440] hover:bg-transparent hover:text-[#82B440] bg-[#82B440] text-xl text-white">
-                            <FaShoppingCart /> Add to Cart
-                          </button>
-                        </Fade>
                       </div>
                     </div>
-                  </div>
+                  </Fade>
                 </div>
-              </div>
+              </>
             ))}
           </>
         )}
