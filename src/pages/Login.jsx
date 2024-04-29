@@ -9,10 +9,12 @@ import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { Typewriter } from "react-simple-typewriter";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
   const {
     singInuser,
     loading,
@@ -83,10 +85,10 @@ const Login = () => {
           backgroundImage: "url(https://i.ibb.co/z7KZfdX/login.jpg)",
         }}
       >
-        <div className="bg-[white]/70 rounded-3xl lg:w-2/5 text-black">
+        <div className="bg-[white]/70 rounded-3xl lg:w-2/5 ">
           <div className="hero-content flex-col shadow-lg  rounded-3xl">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold">
+              <h1 className="text-4xl font-bold text-black">
                 {" "}
                 <Typewriter
                   words={["Login now!"]}
@@ -102,7 +104,7 @@ const Login = () => {
             <div className="card shrink-0 w-full max-w-sm ">
               <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
-                  <span>Email</span>
+                  <span className="text-black font-bold">Email</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +130,7 @@ const Login = () => {
                   )}
                 </div>
                 <div className="form-control">
-                  <span>Password</span>
+                  <span className="text-black font-bold">Password</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -143,12 +145,15 @@ const Login = () => {
                       />
                     </svg>
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       className="grow"
                       name="password"
                       placeholder="password"
                       {...register("password", { required: true })}
-                    />
+                    />{" "}
+                    <a onClick={() => setShowPassword(!showPassword)}>
+                      {!showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </a>
                   </label>
                   {errors.password && (
                     <span className=" text-red-500">
@@ -166,10 +171,12 @@ const Login = () => {
                     )}{" "}
                   </button>
                 </div>
-                <div className="divider">or</div>
+                <div className="divider text-black">or</div>
               </form>
               <div className="-mt-8">
-                <p className=" text-center">Continue with </p>
+                <p className=" text-center font-bold text-black">
+                  Continue with{" "}
+                </p>
                 <div className="flex gap-5 justify-center pt-4">
                   <button
                     onClick={handleGoogleLogin}
@@ -185,14 +192,14 @@ const Login = () => {
                   </button>
                   <button
                     onClick={handleGIthubLogin}
-                    className="hover:bg-slate-300 rounded-full p-3"
+                    className="hover:bg-slate-300 rounded-full text-black p-3"
                   >
                     <FaGithub size={25} />
                   </button>
                 </div>
               </div>
             </div>
-            <p>
+            <p className="text-black font-bold">
               Do not have an account ? Please{" "}
               <Link
                 to="/register"

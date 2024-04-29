@@ -299,7 +299,7 @@ const Navbar = () => {
                     to="/register"
                     className="btn text-white hover:text-[#fc9f27] bg-[#fca027e5] hover:border-[#fc9f27] hover:bg-[transparent]"
                   >
-                    Register
+                    Singup
                   </Link>
                 </div>
               </>

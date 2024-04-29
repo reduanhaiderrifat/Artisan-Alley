@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { Typewriter } from "react-simple-typewriter";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const {
@@ -23,6 +24,8 @@ const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [accept, setAccept] = useState("");
+  const [showPassowrd, setShowPassword] = useState(false);
+  const [showConfirmPassowrd, setShowConfirmPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -115,11 +118,10 @@ const Register = () => {
           backgroundImage: "url(https://i.ibb.co/8z70qsM/sunset.jpg)",
         }}
       >
-        <div className="bg-[white]/30 rounded-3xl lg:w-1/2 text-black">
+        <div className="bg-[white]/30 rounded-3xl lg:w-1/2 ">
           <div className="hero-content flex-col shadow-lg rounded-3xl ">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold">
-                {" "}
+              <h1 className="text-4xl text-black font-bold">
                 <Typewriter
                   words={[" Register now!"]}
                   loop={500}
@@ -134,7 +136,7 @@ const Register = () => {
             <div className="card shrink-0 w-full max-w-sm ">
               <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
-                  <span>UserName</span>
+                  <span className="text-black font-bold">UserName</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +162,7 @@ const Register = () => {
                   )}
                 </div>
                 <div className="form-control">
-                  <span>Photo</span>
+                  <span className="text-black font-bold">Photo</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <FaPhotoFilm />
                     <input
@@ -173,7 +175,7 @@ const Register = () => {
                   </label>
                 </div>
                 <div className="form-control">
-                  <span>Email</span>
+                  <span className="text-black font-bold">Email</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +204,7 @@ const Register = () => {
                   </span>
                 </div>
                 <div className="form-control">
-                  <span>Password</span>
+                  <span className="text-black font-bold">Password</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -217,12 +219,15 @@ const Register = () => {
                       />
                     </svg>
                     <input
-                      type="password"
+                      type={showPassowrd ? "text" : "password"}
                       className="grow"
                       name="password"
                       placeholder="password"
                       {...register("password", { required: true })}
                     />
+                    <a onClick={() => setShowPassword(!showPassowrd)}>
+                      {!showPassowrd ? <FaEyeSlash /> : <FaEye />}
+                    </a>
                   </label>
                   {errors.password && (
                     <span className=" text-red-600 font-bold">
@@ -234,7 +239,7 @@ const Register = () => {
                   </span>
                 </div>
                 <div className="form-control">
-                  <span>confirm-Password</span>
+                  <span className="text-black font-bold">confirm-Password</span>
                   <label className="input input-bordered flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -249,12 +254,19 @@ const Register = () => {
                       />
                     </svg>
                     <input
-                      type="password"
+                      type={showConfirmPassowrd ? "text" : "password"}
                       name="confirmpassword"
                       className="grow"
                       placeholder="confirmpassword"
                       {...register("confirmpassword", { required: true })}
                     />{" "}
+                    <a
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassowrd)
+                      }
+                    >
+                      {!showConfirmPassowrd ? <FaEyeSlash /> : <FaEye />}
+                    </a>
                   </label>
                   {errors.confirmpassword && (
                     <span className=" text-red-600 font-bold">
@@ -282,18 +294,20 @@ const Register = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                  <button className="btn btn-secondary">
+                  <button className="btn font-bold text-lg btn-secondary">
                     {loading ? (
                       <span className="loading loading-spinner loading-md"></span>
                     ) : (
-                      "Register"
+                      "Singup"
                     )}
                   </button>
                 </div>
-                <div className="divider">or</div>
+                <div className="divider text-black">or</div>
               </form>
               <div className="-mt-8">
-                <p className=" text-center">Continue with </p>
+                <p className=" text-center text-black font-bold">
+                  Continue with{" "}
+                </p>
                 <div className="flex gap-5 justify-center pt-4">
                   <button
                     onClick={handleGoogleLogin}
@@ -309,14 +323,14 @@ const Register = () => {
                   </button>
                   <button
                     onClick={handleGithubLogin}
-                    className="hover:bg-slate-300 rounded-full p-3"
+                    className="hover:bg-slate-300 rounded-full text-black p-3"
                   >
                     <FaGithub size={25} />
                   </button>
                 </div>
               </div>
             </div>
-            <p>
+            <p className="text-black font-bold">
               Allready have an account.Please{" "}
               <Link
                 to="/login"
