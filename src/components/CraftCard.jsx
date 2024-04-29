@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const CraftCard = ({ prod }) => {
   const { photo, _id, category, subcategory, description } = prod;
   return (
-    <div>
-      <div className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+    <div className=" ">
+      <div className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800  ">
         <div className=" overflow-hidden">
           <img
             src={photo}

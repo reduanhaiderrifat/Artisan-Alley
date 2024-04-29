@@ -43,10 +43,10 @@ const AllArtsCarts = () => {
             <tr>
               <th></th>
               <th>
-                <strong>Category</strong>
+                <strong>Subcategory</strong>
               </th>
               <th>
-                <strong>Subcategory</strong>
+                <strong>Item Name</strong>
               </th>
               <th>
                 <strong>Customization</strong>

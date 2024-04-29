@@ -75,7 +75,7 @@ const VeiwDetails = () => {
             className=" w-full mb-4 h-96 md:h-[450px] lg:h-[550px] dark:bg-gray-500"
           />
           <h2 className="mb-1 text-xl font-semibold">
-            <span className=" font-bold">Category </span> : {category}
+            <span className=" font-bold">Subcategory </span> : {category}
           </h2>
           <h2 className=" text-xl mt-4 my-2 font-semibold">
             <span className=" font-bold "> {subcategory}</span>

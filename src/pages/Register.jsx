@@ -298,7 +298,7 @@ const Register = () => {
                     {loading ? (
                       <span className="loading loading-spinner loading-md"></span>
                     ) : (
-                      "Singup"
+                      "Register"
                     )}
                   </button>
                 </div>

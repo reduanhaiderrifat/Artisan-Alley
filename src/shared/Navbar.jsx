@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { FaBarsStaggered, FaUser } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -12,7 +12,7 @@ const Navbar = () => {
   const { user, logOut, loading, updateUser } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
   const links = (
     <>
       <NavLink
@@ -76,6 +76,7 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
+        navigate("/");
         toast.success("logout successfully");
       })
       .catch(() => {});
@@ -299,7 +300,7 @@ const Navbar = () => {
                     to="/register"
                     className="btn text-white hover:text-[#fc9f27] bg-[#fca027e5] hover:border-[#fc9f27] hover:bg-[transparent]"
                   >
-                    Singup
+                    Register
                   </Link>
                 </div>
               </>

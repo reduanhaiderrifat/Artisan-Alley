@@ -69,7 +69,7 @@ const AddArtsCarfts = () => {
       <Helmet>
         <title>Artisan Alley_Add Arts&Crafts</title>
       </Helmet>
-      <div className="my-8">
+      <div className="my-8 px-6 border rounded-lg bg-base-200">
         <form onSubmit={handleSubmit} className=" space-y-4">
           {/* form user information row */}
           <Fade direction="down" triggerOnce={true}>
@@ -115,7 +115,7 @@ const AddArtsCarfts = () => {
               <div className="form-control lg:w-1/2">
                 <label className="label">
                   <span className="label-text font-bold text-xl">
-                    Category Name
+                    Subcategory Name
                   </span>
                 </label>
                 <label className="input-group">
@@ -123,7 +123,7 @@ const AddArtsCarfts = () => {
                     type="text"
                     name="category"
                     className="input input-bordered w-full"
-                    placeholder=" category_name"
+                    placeholder=" subcategory_name"
                     required
                   />
                 </label>
@@ -131,7 +131,7 @@ const AddArtsCarfts = () => {
               <div className="form-control  lg:w-1/2">
                 <label className="label">
                   <span className="label-text font-bold text-xl">
-                    Subcategory Name
+                    Item Name
                   </span>
                 </label>
                 <label className="input-group">
@@ -139,7 +139,7 @@ const AddArtsCarfts = () => {
                     type="text"
                     name="subcategory"
                     className="input input-bordered w-full"
-                    placeholder="subcategory_name"
+                    placeholder=" Item_name"
                     required
                   />
                 </label>
@@ -215,11 +215,11 @@ const AddArtsCarfts = () => {
               </div>
             </div>
           </Fade>
-          {/* form quantity row */}
+          {/* form stock and customaize row */}
           <div className="lg:flex gap-4">
             <div className="form-control lg:w-1/2">
               <div className="">
-                <Fade direction="left" delay={1800} triggerOnce={true}>
+                <Fade direction="left" delay={1600} triggerOnce={true}>
                   {" "}
                   <label className="label">
                     <span className="label-text font-bold text-xl">
@@ -249,7 +249,7 @@ const AddArtsCarfts = () => {
                 </Fade>
               </div>
               <div className="mt-12">
-                <Fade direction="left" delay={2400} triggerOnce={true}>
+                <Fade direction="left" delay={1600} triggerOnce={true}>
                   <label className="label">
                     <span className="label-text font-bold text-xl">
                       Customization

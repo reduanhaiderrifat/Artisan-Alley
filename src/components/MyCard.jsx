@@ -39,7 +39,7 @@ const MyCard = ({ product, setItems, products }) => {
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
-                text: "Your file has been deleted.",
+                text: "Your Product has been deleted.",
                 icon: "success",
               });
               const remaing = products.filter((p) => p._id !== id);
@@ -70,7 +70,7 @@ const MyCard = ({ product, setItems, products }) => {
         </div>
         <div className="mt-6 mb-2">
           <span className="block text-md font-medium tracking-widest uppercase dark:text-violet-600">
-            <strong>Category :</strong> {category}
+            <strong>Subcategory :</strong> {category}
           </span>
           <h2 className="text-xl font-semibold text-[#ff9409] tracking-wide mt-3">
             {subcategory}

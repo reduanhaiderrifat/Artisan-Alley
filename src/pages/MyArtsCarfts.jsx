@@ -44,10 +44,10 @@ const MyArtsCarfts = () => {
   if (products.length === 0) {
     return (
       <div className="h-screen flex justify-center items-center flex-col">
-        <h2 className=" text-5xl font-semibold text-center">
+        <h2 className=" text-2xl md:text-4xl lg:text-5xl font-semibold text-center">
           <i>No data available!</i>
         </h2>
-        <h3 className=" text-5xl font-semibold mt-1">
+        <h3 className=" text-2xl md:text-4xl lg:text-5xl font-semibold mt-1">
           <i>Please upload some data!</i>
         </h3>
       </div>

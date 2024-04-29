@@ -1,5 +1,5 @@
 import { Link, useRouteError } from "react-router-dom";
-import gif from "../../public/Animation - 1709742745397.gif";
+import gif from "/Animation - 1709742745397.gif";
 import { Helmet } from "react-helmet-async";
 const NotFoundPage = () => {
   const error = useRouteError();

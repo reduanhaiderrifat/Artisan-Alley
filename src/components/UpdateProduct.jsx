@@ -50,7 +50,6 @@ const UpdateProduct = () => {
       photo,
       subcategory,
     };
-    // console.log(upadateproducts);
     fetch(`https://art-craft-server-iota.vercel.app/products/${_id}`, {
       method: "PUT",
       headers: {
@@ -83,29 +82,12 @@ const UpdateProduct = () => {
       <Helmet>
         <title>Artisan Alley_Update Product</title>
       </Helmet>
-      <div className="my-8">
+      <div className="my-8 border rounded-lg bg-base-200 p-4">
         <form onSubmit={handleSubmit} className=" space-y-4 ">
           {/* form products information row */}
           <Fade direction="down" triggerOnce={true}>
             <div className="lg:flex gap-4 ">
               <div className="form-control lg:w-1/2">
-                <label className="label">
-                  <span className="label-text font-bold text-xl">
-                    Category Name
-                  </span>
-                </label>
-                <label className="input-group">
-                  <input
-                    type="text"
-                    name="category"
-                    className="input input-bordered w-full"
-                    placeholder=" category_name"
-                    defaultValue={category}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="form-control  lg:w-1/2">
                 <label className="label">
                   <span className="label-text font-bold text-xl">
                     Subcategory Name
@@ -114,9 +96,26 @@ const UpdateProduct = () => {
                 <label className="input-group">
                   <input
                     type="text"
+                    name="category"
+                    className="input input-bordered w-full"
+                    placeholder=" subcategory_name"
+                    defaultValue={category}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="form-control  lg:w-1/2">
+                <label className="label">
+                  <span className="label-text font-bold text-xl">
+                    Item Name
+                  </span>
+                </label>
+                <label className="input-group">
+                  <input
+                    type="text"
                     name="subcategory"
                     className="input input-bordered w-full"
-                    placeholder="subcategory_name"
+                    placeholder="Item_name"
                     defaultValue={subcategory}
                     required
                   />
@@ -208,7 +207,7 @@ const UpdateProduct = () => {
                       name="customization"
                       defaultValue={customization}
                       id=""
-                      className="input input-bordered w-full"
+                      className="input input-bordered select w-full"
                     >
                       <option value="yes">yes</option>
                       <option value="no">no</option>
@@ -224,7 +223,7 @@ const UpdateProduct = () => {
                     <select
                       name="stockStatus"
                       id=""
-                      className="input input-bordered w-full"
+                      className="input input-bordered w-full select"
                       defaultValue={stockStatus}
                     >
                       <option value="inStock">inStock</option>

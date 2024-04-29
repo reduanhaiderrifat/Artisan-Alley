@@ -1,8 +1,14 @@
 import { Fade } from "react-awesome-reveal";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaArrowUp, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="px-4 divide-y dark:bg-gray-100 text-white dark:text-gray-800 bg-[#010313]">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -74,7 +80,7 @@ const Footer = () => {
 
           <div className="space-y-3 ">
             <div className="uppercase dark:text-gray-900">Social media</div>
-            <div className="flex justify-start space-x-3">
+            <div className="flex  justify-around ">
               <Fade cascade>
                 <a
                   rel="noopener noreferrer"
@@ -96,9 +102,15 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   href="#"
                   title="Instagram"
-                  className="flex items-center p-1"
+                  className="flex items-center  p-1"
                 >
                   <FaInstagram size={25} className="hover:text-red-400" />
+                </a>
+                <a
+                  onClick={scrollToTop}
+                  className="btn rounded-full  md:ml-4 lg:ml-4 border-[#e0bb17f5] text-[#e0bb17f5] bg-transparent hover:bg-transparent"
+                >
+                  <FaArrowUp />
                 </a>
               </Fade>
             </div>
