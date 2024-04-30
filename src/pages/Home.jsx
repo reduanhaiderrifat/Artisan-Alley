@@ -14,6 +14,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { FaCheck, FaShoppingCart } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
+import Review from "../components/Review";
 const Home = () => {
   const [products, SetProducts] = useState([]);
   const { loading } = useContext(AuthContext);
@@ -82,7 +83,7 @@ const Home = () => {
         </section>
       )}
 
-      <section className="mt-6">
+      <section className="mt-44">
         <div className="text-center space-y-12 my-20">
           <h2 className=" text-3xl font-bold text-[#fc7527]">Arts & Crafts</h2>
           <Fade direction="down">
@@ -109,7 +110,7 @@ const Home = () => {
           </div>
         )}
       </section>
-      <section>
+      <section className="mt-44">
         <div className="">
           <h2 className="text-xl md:text-2xl lg:text-4xl font-bold flex text-[#fc7527] justify-center my-14">
             <span className="mr-2"> Arts & Crafts {""} </span>
@@ -148,7 +149,7 @@ const Home = () => {
           </div>
         )}
       </section>
-      <section className="discount">
+      <section className="discount mt-44">
         <div className=" text-center">
           <h2 className=" text-4xl font-bold my-12 text-[#fc7527]">
             Discount <span className=" text-red-600">%</span>
@@ -261,7 +262,10 @@ const Home = () => {
         )}
       </section>
       <section>
-        <div className="text-center my-14 space-y-8">
+        <Review></Review>
+      </section>
+      <section>
+        <div className="text-center mt-44 my-14 space-y-8">
           <h1 className="text-4xl font-bold text-[#fc7527] ">Gallery</h1>
           <Fade direction="down">
             <p className="inter">

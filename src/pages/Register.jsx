@@ -113,7 +113,7 @@ const Register = () => {
         <title>Artisan Alley_Register</title>
       </Helmet>
       <div
-        className="hero min-h-screen p-6"
+        className="hero bg-no-repeat min-h-screen p-6"
         style={{
           backgroundImage: "url(https://i.ibb.co/8z70qsM/sunset.jpg)",
         }}
