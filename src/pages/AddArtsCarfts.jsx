@@ -90,7 +90,6 @@ const AddArtsCarfts = () => {
                     className="input input-bordered w-full"
                     placeholder=" Username"
                     defaultValue={user.displayName}
-                    required
                   />
                 </label>
               </div>
@@ -102,9 +101,9 @@ const AddArtsCarfts = () => {
                 </label>
                 <label className="input-group">
                   <input
-                    type="text"
+                    type="email"
                     name="email"
-                    className="input input-bordered w-full"
+                    className="input input-bordered w-full cursor-no-drop"
                     placeholder="email"
                     value={user.email}
                   />
@@ -122,13 +121,29 @@ const AddArtsCarfts = () => {
                   </span>
                 </label>
                 <label className="input-group">
-                  <input
+                  <select
                     type="text"
                     name="category"
-                    className="input input-bordered w-full"
-                    placeholder=" subcategory_name"
+                    className="input input-bordered w-full select"
+                    // placeholder="subcategory_name"
                     required
-                  />
+                  >
+                    <option value="" disabled selected>
+                      subcategory_name
+                    </option>
+                    <option value="Watercolour Painting">
+                      Watercolour Painting
+                    </option>
+                    <option value="Oil Painting">Oil Painting</option>
+                    <option value="Charcoal Sketching">
+                      Charcoal Sketching
+                    </option>
+                    <option value="Cartoon Drawing">Cartoon Drawing</option>
+                    <option value="Landscape Painting">
+                      Landscape Painting
+                    </option>
+                    <option value="Portrait Drawing">Portrait Drawing</option>
+                  </select>
                 </label>
               </div>
               <div className="form-control  lg:w-1/2">
