@@ -98,9 +98,12 @@ const Home = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {product.slice(0, 6).map((prod) => (
-              <CraftCard key={prod._id} prod={prod}></CraftCard>
-            ))}
+            {product
+              .sort(() => Math.random() - 0.5)
+              .slice(0, 6)
+              .map((prod) => (
+                <CraftCard key={prod._id} prod={prod}></CraftCard>
+              ))}
           </div>
         )}
       </section>

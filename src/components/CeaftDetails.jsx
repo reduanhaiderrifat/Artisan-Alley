@@ -53,13 +53,7 @@ const CeaftDetails = () => {
               className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500"
             />
             <div className="flex flex-col space-y-1">
-              <a
-                rel="noopener noreferrer"
-                href="#"
-                className="text-sm font-semibold"
-              >
-                {username}
-              </a>
+              <h1 className="text-sm font-semibold">{username}</h1>
               <span className="text-xs dark:text-gray-600">
                 {timestamp && timestamp.split("T")[0]} POST
               </span>

@@ -6,7 +6,7 @@ const PaintingCard = ({ painting }) => {
   return (
     <>
       <Link to={`/categorys/${category}`}>
-        <div className=" relative hover:scale-110 transition-all p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
+        <div className=" relative hover:scale-105 transition-all p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
           <img
             src={photo}
             alt=""
