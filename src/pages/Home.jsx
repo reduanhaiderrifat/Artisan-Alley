@@ -85,12 +85,14 @@ const Home = () => {
       <section className="mt-6">
         <div className="text-center space-y-12 my-20">
           <h2 className=" text-3xl font-bold text-[#fc7527]">Arts & Crafts</h2>
-          <p className=" text-xl break-all inter">
-            Arts and crafts describes a wide variety of activities involving
-            making things with of one own hands. Arts and crafts is usually a
-            hobby. Some crafts (art skills) have been practised since
-            preshistoric times, others are more recent inventions.
-          </p>
+          <Fade direction="down">
+            <p className=" text-xl break-all inter">
+              Arts and crafts describes a wide variety of activities involving
+              making things with of one own hands. Arts and crafts is usually a
+              hobby. Some crafts (art skills) have been practised since
+              preshistoric times, others are more recent inventions.
+            </p>
+          </Fade>
         </div>
         {loader ? (
           <div className="flex justify-center items-center h-[calc(100px-70)]">
@@ -121,13 +123,15 @@ const Home = () => {
               delaySpeed={1000}
             />
           </h2>
-          <p className=" text-center mb-3 inter">
-            The Arts & Crafts category encompasses a wide range of creative
-            endeavors that involve crafting, making, and artistic expression.
-            From traditional handicrafts to modern DIY projects, this category
-            celebrates the joy of creating handmade items and exploring artistic
-            techniques
-          </p>
+          <Fade direction="down">
+            <p className=" text-center mb-3 inter">
+              The Arts & Crafts category encompasses a wide range of creative
+              endeavors that involve crafting, making, and artistic expression.
+              From traditional handicrafts to modern DIY projects, this category
+              celebrates the joy of creating handmade items and exploring
+              artistic techniques
+            </p>
+          </Fade>
         </div>
         {loader ? (
           <div className="flex justify-center items-center h-[calc(100px-70)]">
@@ -149,11 +153,13 @@ const Home = () => {
           <h2 className=" text-4xl font-bold my-12 text-[#fc7527]">
             Discount <span className=" text-red-600">%</span>
           </h2>
-          <p className="inter">
-            Explore a world of creativity and imagination with our exclusive art
-            collection, now available at unbeatable prices for a limited time
-            only!
-          </p>
+          <Fade direction="down">
+            <p className="inter">
+              Explore a world of creativity and imagination with our exclusive
+              art collection, now available at unbeatable prices for a limited
+              time only!
+            </p>
+          </Fade>
         </div>
         {loader || loading ? (
           <div className="flex justify-center items-center h-[calc(100px-70)]">
@@ -257,173 +263,178 @@ const Home = () => {
       <section>
         <div className="text-center my-14 space-y-8">
           <h1 className="text-4xl font-bold text-[#fc7527] ">Gallery</h1>
-          <p className="inter">
-            A gallery is a space dedicated to the exhibition and appreciation of
-            visual art. It serves as a cultural hub where artists showcase their
-            works to the public and visitors engage with art in various forms.
-            Within a gallery, visitors can immerse themselves in a diverse range
-            of artistic expressions, from traditional paintings and sculptures
-            to avant-garde installations and multimedia presentations.
-          </p>
+          <Fade direction="down">
+            <p className="inter">
+              A gallery is a space dedicated to the exhibition and appreciation
+              of visual art. It serves as a cultural hub where artists showcase
+              their works to the public and visitors engage with art in various
+              forms. Within a gallery, visitors can immerse themselves in a
+              diverse range of artistic expressions, from traditional paintings
+              and sculptures to avant-garde installations and multimedia
+              presentations.
+            </p>
+          </Fade>
         </div>
         {loading ? (
           <div className="flex justify-center items-center h-[calc(100px-70)]">
             <span className="loading loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="gallery">
-            <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
-              <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-                <img
-                  src="https://i.ibb.co/1f1sp6T/cartoon-stripe.jpg"
-                  alt=""
-                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/mhbdTmY/cartoonzip.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/Tcf1LT4/pencil.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/pWZgXm4/oil.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/cLHgpf2/prolar.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/r0tfQtq/skach.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/PtXfM1t/mauntaint.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/1Lk2jWY/cartoon.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/DDwWqBW/carchol.jpg"
-                />
-                <img
-                  src="https://i.ibb.co/xqSq5MJ/water.jpg"
-                  alt=""
-                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square"
-                />
-                <img
-                  src="https://i.ibb.co/FW03yX9/parotiat.jpg"
-                  alt=""
-                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/xgBq8mr/parotia.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/JFKLD3V/paingting4.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/HN8hTnm/painting2.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/hDpPRzh/painting1.jpg "
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/HV5GVGY/canvas.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/wWqPZZn/Forest.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/J5byYy9/Ink.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/kMKKTSj/river-forest-with-river-trees-337384-20353.jpg"
-                />
-              </div>
-              <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-                <img
-                  src="https://i.ibb.co/7KCXdCG/superhero.jpg"
-                  alt=""
-                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/2sxRsz5/skatch.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/WzHyt1p/seperhero3.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/hsCxSjd/seperhero1.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/2ZKS0by/scatch.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/1Mj9Kyk/moutain2.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/5LgjsXT/mountaint4.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/FVjn7NQ/mountain3.jpg"
-                />
-                <img
-                  alt=""
-                  className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
-                  src="https://i.ibb.co/yW5WLwC/mauntain.jpg"
-                />
-                <img
-                  src="https://i.ibb.co/6FrpTNK/oil.jpg"
-                  alt=""
-                  className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square"
-                />
-              </div>
-            </section>
-          </div>
+          <>
+            <div className="gallery">
+              <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
+                <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+                  <img
+                    src="https://i.ibb.co/1f1sp6T/cartoon-stripe.jpg"
+                    alt=""
+                    className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/mhbdTmY/cartoonzip.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/Tcf1LT4/pencil.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/pWZgXm4/oil.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/cLHgpf2/prolar.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/r0tfQtq/skach.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/PtXfM1t/mauntaint.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/1Lk2jWY/cartoon.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/DDwWqBW/carchol.jpg"
+                  />
+                  <img
+                    src="https://i.ibb.co/xqSq5MJ/water.jpg"
+                    alt=""
+                    className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square"
+                  />
+                  <img
+                    src="https://i.ibb.co/FW03yX9/parotiat.jpg"
+                    alt=""
+                    className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/xgBq8mr/parotia.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/JFKLD3V/paingting4.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/HN8hTnm/painting2.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/hDpPRzh/painting1.jpg "
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/HV5GVGY/canvas.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/wWqPZZn/Forest.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/J5byYy9/Ink.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/kMKKTSj/river-forest-with-river-trees-337384-20353.jpg"
+                  />
+                </div>
+                <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
+                  <img
+                    src="https://i.ibb.co/7KCXdCG/superhero.jpg"
+                    alt=""
+                    className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/2sxRsz5/skatch.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/WzHyt1p/seperhero3.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/hsCxSjd/seperhero1.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/2ZKS0by/scatch.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/1Mj9Kyk/moutain2.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/5LgjsXT/mountaint4.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/FVjn7NQ/mountain3.jpg"
+                  />
+                  <img
+                    alt=""
+                    className="w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square"
+                    src="https://i.ibb.co/yW5WLwC/mauntain.jpg"
+                  />
+                  <img
+                    src="https://i.ibb.co/6FrpTNK/oil.jpg"
+                    alt=""
+                    className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-1 md:row-start-3 dark:bg-gray-500 aspect-square"
+                  />
+                </div>
+              </section>
+            </div>
+          </>
         )}
       </section>
     </div>

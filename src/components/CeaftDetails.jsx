@@ -6,6 +6,7 @@ import { MdAttachEmail } from "react-icons/md";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { Zoom } from "react-awesome-reveal";
 
 const CeaftDetails = () => {
   const product = useLoaderData();
@@ -60,11 +61,13 @@ const CeaftDetails = () => {
             </div>
           </div>
           <div>
-            <img
-              src={photo}
-              alt=""
-              className=" w-full mb-4 h-96 md:h-[450px] lg:h-[550px] dark:bg-gray-500"
-            />
+            <Zoom triggerOnce={true}>
+              <img
+                src={photo}
+                alt=""
+                className=" w-full mb-4 h-96 md:h-[450px] lg:h-[550px] dark:bg-gray-500"
+              />
+            </Zoom>
             <h2 className="mb-4 text-xl font-semibold">
               <span className=" font-bold">{category}</span>
             </h2>
