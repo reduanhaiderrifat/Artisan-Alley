@@ -36,7 +36,7 @@ const AddArtsCarfts = () => {
       stockStatus,
       customization,
     };
-    console.log(products);
+    // console.log(products);
     fetch("https://art-craft-server-iota.vercel.app/products", {
       method: "POST",
       headers: {
@@ -105,7 +105,7 @@ const AddArtsCarfts = () => {
                     name="email"
                     className="input input-bordered w-full cursor-no-drop"
                     placeholder="email"
-                    value={user.email}
+                    defaultValue={user.email}
                   />
                 </label>
               </div>
